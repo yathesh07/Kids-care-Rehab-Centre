@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import { Button, Card, Section, SectionHead } from '@/components/ui'
+import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal'
+import { galleryImages } from '@/content/gallery'
 import { CTABand, ConditionGrid, ServiceGrid, StatStrip } from '@/components/sections'
 import { Seo, organisationSchema } from '@/components/layout/Seo'
 import { IconArrow, IconClock, IconPhone, IconPin } from '@/components/ui/Icons'
@@ -20,7 +23,11 @@ export default function Home() {
       {/* ---------------------------------------------------------- hero */}
       <div className="relative overflow-hidden border-b border-ink-200/60 bg-linear-to-br from-brand-50 via-paper to-accent-50">
         <div className="container-page relative grid items-center gap-10 py-14 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          >
             <span className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-white px-3.5 py-1.5 font-display text-xs font-semibold text-brand-600">
               <span className="h-1.5 w-1.5 rounded-full bg-accent-500" />
               Serving Chennai since {site.foundedText}
@@ -58,26 +65,35 @@ export default function Home() {
                 WhatsApp
               </a>
             </p>
-          </div>
+          </motion.div>
 
-          {/* Illustrative panel — replaced with real photography once consent is cleared */}
-          <div className="relative">
-            <div className="aspect-4/3 overflow-hidden rounded-[1.75rem] border border-brand-200/70 bg-brand-100">
-              <div className="flex h-full w-full flex-col items-center justify-center gap-3 p-8 text-center">
-                <svg viewBox="0 0 120 100" className="h-32 w-40" role="img" aria-hidden="true">
-                  <circle cx="60" cy="30" r="15" className="fill-accent-400" />
-                  <path d="M32 82c0-15.5 12.5-28 28-28s28 12.5 28 28Z" className="fill-brand-400" />
-                  <circle cx="24" cy="46" r="9" className="fill-brand-300" />
-                  <path d="M6 80c0-10 8-18 18-18 2.6 0 5 .5 7.2 1.5A34 34 0 0 0 24 80Z" className="fill-brand-300" />
-                  <circle cx="96" cy="46" r="9" className="fill-teal-300" />
-                  <path d="M114 80c0-10-8-18-18-18-2.6 0-5 .5-7.2 1.5A34 34 0 0 1 96 80Z" className="fill-teal-300" />
-                </svg>
-                <p className="max-w-[26ch] font-display text-sm font-medium text-brand-700">
-                  Therapy photography to be added once parental consent is confirmed
-                </p>
-              </div>
+          <motion.div
+            className="relative"
+            initial={{ opacity: 0, scale: 0.94 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+          >
+            {/* decorative floating accents */}
+            <motion.span
+              aria-hidden="true"
+              className="absolute -top-6 -right-6 h-24 w-24 rounded-full bg-accent-300/40 blur-2xl"
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+            />
+            <motion.span
+              aria-hidden="true"
+              className="absolute -bottom-8 -left-8 h-28 w-28 rounded-full bg-brand-300/40 blur-2xl"
+              animate={{ y: [0, 12, 0] }}
+              transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
+            />
+            <div className="relative aspect-4/3 overflow-hidden rounded-[1.75rem] border border-brand-200/70 shadow-lift">
+              <img
+                src="/gallery-photos/therapy-physio-session.jpg"
+                alt="A physiotherapist guiding a child through a therapy exercise at Kids Care Rehab Centre"
+                className="h-full w-full object-cover"
+              />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 
@@ -85,7 +101,7 @@ export default function Home() {
 
       {/* --------------------------------------------------------- about */}
       <Section tone="paper" className="pt-16 sm:pt-24">
-        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+        <Reveal className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           <div>
             <span className="font-display text-xs font-semibold tracking-[0.14em] text-brand-500 uppercase">
               About us
@@ -112,7 +128,7 @@ export default function Home() {
               <IconArrow className="h-4 w-4" />
             </Button>
           </div>
-        </div>
+        </Reveal>
       </Section>
 
       {/* ------------------------------------------------------ services */}
@@ -149,7 +165,7 @@ export default function Home() {
 
       {/* ------------------------------------------------------ BRAIN2ACT */}
       <Section tone="white">
-        <div className="grid items-center gap-8 rounded-[1.5rem] border border-accent-200 bg-accent-50 p-8 sm:p-10 lg:grid-cols-[1.2fr_0.8fr]">
+        <Reveal className="grid items-center gap-8 rounded-[1.5rem] border border-accent-200 bg-accent-50 p-8 sm:p-10 lg:grid-cols-[1.2fr_0.8fr]">
           <div>
             <span className="font-display text-xs font-semibold tracking-[0.14em] text-accent-700 uppercase">
               Our own program
@@ -166,7 +182,7 @@ export default function Home() {
               About BRAIN2ACT
             </Button>
           </div>
-        </div>
+        </Reveal>
       </Section>
 
       {/* ------------------------------------------------------ branches */}
@@ -176,9 +192,10 @@ export default function Home() {
           title="Two centres in Chennai"
           intro="Both centres offer our full range of children’s therapy services."
         />
-        <div className="grid gap-5 sm:grid-cols-2">
+        <RevealGroup className="grid gap-5 sm:grid-cols-2" stagger={0.1}>
           {branches.map((b) => (
-            <Card key={b.slug} interactive={false} className="gap-4">
+            <RevealItem key={b.slug}>
+            <Card interactive={false} className="gap-4">
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <h3 className="text-xl">{b.name}</h3>
@@ -225,13 +242,14 @@ export default function Home() {
                 </Button>
               </div>
             </Card>
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
       </Section>
 
       {/* --------------------------------------------------------- trust */}
       <Section tone="white">
-        <div className="rounded-card border border-ink-200 bg-paper p-8 sm:p-10">
+        <Reveal className="rounded-card border border-ink-200 bg-paper p-8 sm:p-10">
           <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>
               <h2 className="text-2xl">A registered charitable trust</h2>
@@ -257,6 +275,35 @@ export default function Home() {
               <IconArrow className="h-4 w-4" />
             </Link>
           </div>
+        </Reveal>
+      </Section>
+
+      {/* ------------------------------------------------------- gallery */}
+      <Section tone="paper">
+        <SectionHead
+          eyebrow="Recent moments"
+          title="A look inside our centres"
+          intro="Therapy sessions, outreach visits and centre events — see more in the full gallery."
+        />
+        <RevealGroup className="grid grid-cols-2 gap-4 sm:grid-cols-4" stagger={0.06}>
+          {galleryImages.slice(0, 4).map((img) => (
+            <RevealItem key={img.src} className="group overflow-hidden rounded-card border border-ink-200">
+              <Link to="/gallery" className="block aspect-square">
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              </Link>
+            </RevealItem>
+          ))}
+        </RevealGroup>
+        <div className="mt-8">
+          <Button to="/gallery" variant="secondary">
+            View full gallery
+            <IconArrow className="h-4 w-4" />
+          </Button>
         </div>
       </Section>
 

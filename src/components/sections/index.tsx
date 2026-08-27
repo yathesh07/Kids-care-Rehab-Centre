@@ -2,6 +2,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import type { ReactNode } from 'react'
 import { Button, Card, cn, Section, SectionHead } from '@/components/ui'
+import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal'
 import { IconArrow, IconCheck, IconPhone, ServiceIcon } from '@/components/ui/Icons'
 import { services } from '@/content/services'
 import { conditions } from '@/content/conditions'
@@ -64,22 +65,24 @@ export function PageHero({
     <div className="border-b border-ink-200/70 bg-linear-to-b from-brand-50 to-paper">
       <div className="container-page py-10 sm:py-14">
         {trail && <Breadcrumbs trail={trail} />}
-        {eyebrow && (
-          <span className="font-display text-xs font-semibold tracking-[0.14em] text-brand-500 uppercase">
-            {eyebrow}
-          </span>
-        )}
-        <h1 className="mt-2 max-w-[20ch] text-3xl sm:text-4xl lg:text-[2.75rem]">{title}</h1>
-        {paras.length > 0 && (
-          <div className="mt-4 flex flex-col gap-3">
-            {paras.map((p) => (
-              <p key={p.slice(0, 30)} className="max-w-[68ch] text-lg text-ink-600">
-                {p}
-              </p>
-            ))}
-          </div>
-        )}
-        {children}
+        <Reveal y={16}>
+          {eyebrow && (
+            <span className="font-display text-xs font-semibold tracking-[0.14em] text-brand-500 uppercase">
+              {eyebrow}
+            </span>
+          )}
+          <h1 className="mt-2 max-w-[20ch] text-3xl sm:text-4xl lg:text-[2.75rem]">{title}</h1>
+          {paras.length > 0 && (
+            <div className="mt-4 flex flex-col gap-3">
+              {paras.map((p) => (
+                <p key={p.slice(0, 30)} className="max-w-[68ch] text-lg text-ink-600">
+                  {p}
+                </p>
+              ))}
+            </div>
+          )}
+          {children}
+        </Reveal>
       </div>
     </div>
   )
@@ -89,9 +92,13 @@ export function PageHero({
 export function StatStrip() {
   return (
     <div className="container-page -mt-8 sm:-mt-10">
-      <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-card border border-ink-200 bg-ink-200 shadow-lift lg:grid-cols-4">
+      <RevealGroup
+        as="dl"
+        className="grid grid-cols-2 gap-px overflow-hidden rounded-card border border-ink-200 bg-ink-200 shadow-lift lg:grid-cols-4"
+        stagger={0.07}
+      >
         {site.stats.map((s) => (
-          <div key={s.label} className="flex flex-col gap-0.5 bg-white p-5 sm:p-6">
+          <RevealItem key={s.label} className="flex flex-col gap-0.5 bg-white p-5 sm:p-6" y={14}>
             {/* value renders first visually; dt stays first in the DOM for semantics */}
             <dt className="order-2 font-display text-sm font-semibold text-ink-800">
               {s.label}
@@ -100,9 +107,9 @@ export function StatStrip() {
               {s.value}
             </dd>
             <dd className="order-3 text-xs text-ink-500">{s.detail}</dd>
-          </div>
+          </RevealItem>
         ))}
-      </dl>
+      </RevealGroup>
     </div>
   )
 }
@@ -111,21 +118,23 @@ export function StatStrip() {
 export function ServiceGrid({ limit }: { limit?: number }) {
   const list = limit ? services.slice(0, limit) : services
   return (
-    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    <RevealGroup className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3" stagger={0.06}>
       {list.map((s) => (
-        <Card key={s.slug} to={`/services/${s.slug}`}>
-          <span className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-brand-500 transition-colors group-hover:bg-brand-100">
-            <ServiceIcon name={s.icon} className="h-6 w-6" />
-          </span>
-          <h3 className="mb-2 text-lg group-hover:text-brand-700">{s.name}</h3>
-          <p className="mb-4 flex-1 text-[0.95rem] text-ink-600">{s.short}</p>
-          <span className="inline-flex items-center gap-1.5 font-display text-sm font-semibold text-brand-600">
-            Learn more
-            <IconArrow className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-          </span>
-        </Card>
+        <RevealItem key={s.slug}>
+          <Card to={`/services/${s.slug}`} className="h-full">
+            <span className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-brand-500 transition-colors group-hover:bg-brand-100">
+              <ServiceIcon name={s.icon} className="h-6 w-6" />
+            </span>
+            <h3 className="mb-2 text-lg group-hover:text-brand-700">{s.name}</h3>
+            <p className="mb-4 flex-1 text-[0.95rem] text-ink-600">{s.short}</p>
+            <span className="inline-flex items-center gap-1.5 font-display text-sm font-semibold text-brand-600">
+              Learn more
+              <IconArrow className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+            </span>
+          </Card>
+        </RevealItem>
       ))}
-    </div>
+    </RevealGroup>
   )
 }
 
@@ -133,21 +142,23 @@ export function ServiceGrid({ limit }: { limit?: number }) {
 export function ConditionGrid({ limit }: { limit?: number }) {
   const list = limit ? conditions.slice(0, limit) : conditions
   return (
-    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <RevealGroup className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" stagger={0.05}>
       {list.map((c) => (
-        <Card key={c.slug} to={`/conditions/${c.slug}`} className="border-teal-200/60 p-5">
-          <h3 className="mb-1.5 text-base group-hover:text-teal-700">
-            {c.name}
-            {c.abbr && <span className="ml-1.5 text-ink-400">({c.abbr})</span>}
-          </h3>
-          <p className="mb-3 flex-1 text-sm text-ink-600">{c.short}</p>
-          <span className="inline-flex items-center gap-1.5 font-display text-sm font-semibold text-teal-600">
-            How we help
-            <IconArrow className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-          </span>
-        </Card>
+        <RevealItem key={c.slug}>
+          <Card to={`/conditions/${c.slug}`} className="h-full border-teal-200/60 p-5">
+            <h3 className="mb-1.5 text-base group-hover:text-teal-700">
+              {c.name}
+              {c.abbr && <span className="ml-1.5 text-ink-400">({c.abbr})</span>}
+            </h3>
+            <p className="mb-3 flex-1 text-sm text-ink-600">{c.short}</p>
+            <span className="inline-flex items-center gap-1.5 font-display text-sm font-semibold text-teal-600">
+              How we help
+              <IconArrow className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+            </span>
+          </Card>
+        </RevealItem>
       ))}
-    </div>
+    </RevealGroup>
   )
 }
 
@@ -161,7 +172,7 @@ export function CTABand({
 }) {
   return (
     <Section tone="brandDark">
-      <div className="flex flex-col items-start gap-7 lg:flex-row lg:items-center lg:justify-between">
+      <Reveal className="flex flex-col items-start gap-7 lg:flex-row lg:items-center lg:justify-between">
         <div className="max-w-[52ch]">
           <h2 className="text-2xl text-white sm:text-3xl">{title}</h2>
           <p className="mt-3 text-brand-100">{body}</p>
@@ -178,7 +189,7 @@ export function CTABand({
             Chat on WhatsApp
           </Button>
         </div>
-      </div>
+      </Reveal>
     </Section>
   )
 }

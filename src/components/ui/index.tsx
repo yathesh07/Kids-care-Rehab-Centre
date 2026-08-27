@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import type { ReactNode, ComponentPropsWithoutRef } from 'react'
+import { Reveal } from '@/components/motion/Reveal'
 
 /* ---------------------------------------------------------------- cn */
 export const cn = (...parts: (string | false | null | undefined)[]) =>
@@ -110,7 +111,7 @@ export function SectionHead({
   tone?: 'light' | 'dark'
 }) {
   return (
-    <div
+    <Reveal
       className={cn(
         'mb-10 flex flex-col gap-3',
         align === 'center' && 'items-center text-center',
@@ -145,7 +146,7 @@ export function SectionHead({
           {intro}
         </p>
       )}
-    </div>
+    </Reveal>
   )
 }
 

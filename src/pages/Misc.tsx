@@ -1,9 +1,11 @@
 import { Button, Card, DraftNote, Section, SectionHead } from '@/components/ui'
 import { CTABand, CallCard, CheckList, PageHero } from '@/components/sections'
 import { Seo } from '@/components/layout/Seo'
+import { RevealGroup, RevealItem } from '@/components/motion/Reveal'
 import { IconArrow } from '@/components/ui/Icons'
 import { adultPhysio, books } from '@/content/about'
-import { faqs, galleryImages, testimonials } from '@/content/placeholders'
+import { faqs, testimonials } from '@/content/placeholders'
+import { galleryImages } from '@/content/gallery'
 import { site } from '@/content/site'
 
 /* ------------------------------------------------ Adult Physio Care */
@@ -243,11 +245,15 @@ export function GalleryPage() {
     <>
       <Seo
         title="Gallery"
-        description="Photographs from Kids Care Rehab Centre, Chennai."
+        description="Photographs from Kids Care Rehab Centre, Chennai — therapy sessions, outreach visits and centre events."
         path="/gallery"
-        noindex
       />
-      <PageHero eyebrow="Gallery" title="Inside our centres" trail={[{ label: 'Gallery' }]} />
+      <PageHero
+        eyebrow="Gallery"
+        title="Inside our centres"
+        intro="A look at therapy sessions, outreach visits and centre events — real moments from Kids Care Rehab Centre, shared with families' consent."
+        trail={[{ label: 'Gallery' }]}
+      />
       <Section tone="paper">
         {galleryImages.length === 0 ? (
           <div className="mx-auto max-w-2xl rounded-card border border-dashed border-accent-400 bg-accent-50 p-8 text-center">
@@ -266,17 +272,18 @@ export function GalleryPage() {
             </Button>
           </div>
         ) : (
-          <div className="columns-2 gap-4 lg:columns-3 [&>*]:mb-4">
+          <RevealGroup className="columns-2 gap-4 lg:columns-3 [&>*]:mb-4" stagger={0.06}>
             {galleryImages.map((img) => (
-              <img
-                key={img.src}
-                src={img.src}
-                alt={img.alt}
-                loading="lazy"
-                className="w-full rounded-card border border-ink-200"
-              />
+              <RevealItem key={img.src} className="overflow-hidden rounded-card border border-ink-200">
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading="lazy"
+                  className="w-full transition-transform duration-500 hover:scale-105"
+                />
+              </RevealItem>
             ))}
-          </div>
+          </RevealGroup>
         )}
       </Section>
       <CTABand />

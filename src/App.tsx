@@ -4,6 +4,7 @@ import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { MobileActionBar, WhatsAppFab } from '@/components/layout/MobileActionBar'
 import { ScrollToTop } from '@/components/sections'
+import { ScrollProgress } from '@/components/motion/ScrollProgress'
 import Home from '@/pages/Home'
 
 /* Home ships in the main bundle; every other route is code-split. */
@@ -45,6 +46,7 @@ function RouteFallback() {
 export default function App() {
   return (
     <div className="flex min-h-screen flex-col">
+      <ScrollProgress />
       <ScrollToTop />
       <Header />
 

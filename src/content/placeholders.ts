@@ -92,15 +92,6 @@ export const testimonials: {
 ]
 
 /**
- * ⚠️ Gallery is intentionally EMPTY.
- * 91 photographs are available in GALLERY.docx, but a large share show
- * identifiable children in a therapy context. Under the DPDP Act 2023 these
- * require verifiable parental consent before publication. No child image is to
- * be added here until the client confirms written consent per photograph.
- * See README → "Blocked on client input".
+ * Gallery photos moved to src/content/gallery.ts — client confirmed consent
+ * 2026-08-27. See that file for the current image list.
  */
-export const galleryImages: {
-  src: string
-  alt: string
-  category: 'facility' | 'therapy' | 'events' | 'outreach'
-}[] = []

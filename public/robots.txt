@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /testimonials
+Disallow: /gallery
+
+Sitemap: https://www.kidscarerehabcenter.in/sitemap.xml

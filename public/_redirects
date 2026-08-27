@@ -1,0 +1,17 @@
+# --- Preserve SEO from the old Wix site (16 URLs) ---
+/treatment-therapies              /services              301
+/about-2                          /programs              301
+/services-4                       /programs/autism-ott-podcast   301
+/services-5                       /books                 301
+/blank-page                       /trust                 301
+/blank-page-1                     /adult-physio-care     301
+/general-3                        /testimonials          301
+/brain2actonlineclass             /programs/brain2act    301
+/onlinetherapyclass               /programs/online-therapy  301
+/onlineattentionclass             /programs/online-attention-class  301
+/online-student-workshop-growth-mind  /programs/growth-mindset-workshop  301
+/royapettah                       /locations/royapettah  301
+/madipakkam                       /locations/madipakkam  301
+
+# SPA fallback — must stay last
+/*                                /index.html            200

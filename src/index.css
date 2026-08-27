@@ -1,0 +1,130 @@
+@import 'tailwindcss';
+
+/* Latin subsets only — Cyrillic/Greek/Devanagari are never used by this site */
+@import '@fontsource/poppins/latin-500.css';
+@import '@fontsource/poppins/latin-600.css';
+@import '@fontsource/poppins/latin-700.css';
+@import '@fontsource/inter/latin-400.css';
+@import '@fontsource/inter/latin-500.css';
+@import '@fontsource/inter/latin-600.css';
+
+@theme {
+  /* Brand — deep clinical green, from the approved mockup */
+  --color-brand-50: #eef6f1;
+  --color-brand-100: #e7f1eb;
+  --color-brand-200: #c3ddd0;
+  --color-brand-300: #92c2ac;
+  --color-brand-400: #4e9b78;
+  --color-brand-500: #1f6b4e;
+  --color-brand-600: #1a5c43;
+  --color-brand-700: #164b37;
+  --color-brand-800: #123c2c;
+  --color-brand-900: #0e2f23;
+
+  /* Marigold — single accent, drawn from the centre's own walls */
+  --color-accent-50: #fdf8ed;
+  --color-accent-100: #fbf0da;
+  --color-accent-200: #f6dfae;
+  --color-accent-300: #efc575;
+  --color-accent-400: #e9ae44;
+  --color-accent-500: #e39b1f;
+  --color-accent-600: #c07d14;
+  --color-accent-700: #9a6112;
+
+  /* Therapy teal — differentiates Conditions from Services */
+  --color-teal-50: #eef6f8;
+  --color-teal-100: #e2eff1;
+  --color-teal-200: #bcdae0;
+  --color-teal-300: #86bcc7;
+  --color-teal-400: #4f9dad;
+  --color-teal-500: #2a7f8f;
+  --color-teal-600: #226776;
+  --color-teal-700: #1c525e;
+
+  /* Neutrals — biased green, not default grey */
+  --color-ink-50: #f7f8f7;
+  --color-ink-100: #eef0ee;
+  --color-ink-200: #dfe3e0;
+  --color-ink-300: #c0c8c3;
+  --color-ink-400: #8b9891;
+  --color-ink-500: #66756d;
+  --color-ink-600: #4a5a52;
+  --color-ink-700: #35443c;
+  --color-ink-800: #22302a;
+  --color-ink-900: #16241d;
+
+  --color-paper: #fbfaf6;
+
+  --font-display: 'Poppins', 'Segoe UI', system-ui, sans-serif;
+  --font-sans: 'Inter', 'Segoe UI', system-ui, sans-serif;
+
+  --radius-card: 0.875rem;
+
+  --shadow-soft: 0 1px 2px rgba(22, 36, 29, 0.04), 0 10px 30px -14px rgba(22, 36, 29, 0.16);
+  --shadow-lift: 0 2px 4px rgba(22, 36, 29, 0.05), 0 18px 44px -18px rgba(22, 36, 29, 0.24);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    /* 17px base — many caregivers are grandparents reading on a phone */
+    @apply bg-paper font-sans text-[1.0625rem] leading-relaxed text-ink-700 antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display font-semibold text-ink-900;
+    text-wrap: balance;
+    line-height: 1.2;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-500;
+  }
+
+  /* Never hide focus for keyboard users */
+  ::selection {
+    @apply bg-brand-100 text-brand-800;
+  }
+}
+
+@utility container-page {
+  @apply mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8;
+}
+
+@utility prose-page {
+  & p {
+    @apply mb-4 max-w-[68ch] text-ink-600;
+  }
+  & h2 {
+    @apply mt-10 mb-3 text-2xl;
+  }
+  & h3 {
+    @apply mt-8 mb-2 text-xl;
+  }
+  & ul {
+    @apply mb-4 max-w-[68ch] list-disc space-y-2 pl-5 text-ink-600 marker:text-brand-300;
+  }
+  & a {
+    @apply text-brand-600 underline underline-offset-2 hover:text-brand-700;
+  }
+}

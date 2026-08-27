@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Form detection — not a real page</title><meta name="robots" content="noindex,nofollow"></head>
+<body>
+<!--
+  This file exists only so Netlify's build-time form crawler can detect the
+  "enquiry" form. It scans static HTML in the publish directory; the real
+  form in src/pages/Contact.tsx is rendered by React and invisible to it.
+  This page is never linked and is not part of the app's routing.
+-->
+<form name="enquiry" data-netlify="true" netlify-honeypot="company" hidden>
+  <input type="hidden" name="form-name" value="enquiry" />
+  <input name="company" />
+  <input name="parentName" />
+  <input name="phone" />
+  <input name="email" />
+  <input name="childAge" />
+  <select name="concern"><option value="not-sure"></option></select>
+  <select name="branch"><option value=""></option></select>
+  <textarea name="message"></textarea>
+</form>
+</body>
+</html>

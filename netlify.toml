@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# public/_redirects already handles old-URL 301s and the SPA fallback (200 to /index.html).
+# Netlify reads that file automatically from the publish directory — nothing else needed here.

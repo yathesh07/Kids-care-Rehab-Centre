@@ -94,7 +94,7 @@ const statValueColors = ['text-brand-600', 'text-teal-600', 'text-sky-600', 'tex
 
 export function StatStrip() {
   return (
-    <div className="container-page -mt-8 sm:-mt-10">
+    <div className="container-page -mt-5 sm:-mt-6">
       <RevealGroup
         as="dl"
         className="grid grid-cols-2 gap-px overflow-hidden rounded-card border border-ink-200 bg-ink-200 shadow-lift lg:grid-cols-4"
@@ -104,7 +104,7 @@ export function StatStrip() {
           <RevealItem
             key={s.label}
             className={cn(
-              'flex flex-col gap-0.5 p-5 sm:p-6',
+              'flex flex-col gap-1 p-5 pt-6 sm:p-6 sm:pt-7',
               s.highlight ? 'bg-accent-400 text-ink-900' : statTileColors[i % statTileColors.length],
             )}
             y={14}
@@ -120,7 +120,7 @@ export function StatStrip() {
             </dt>
             <dd
               className={cn(
-                'order-1 font-display text-3xl font-bold sm:text-4xl',
+                'order-1 font-display text-3xl leading-tight font-bold sm:text-4xl',
                 s.highlight ? 'text-ink-900' : statValueColors[i % statValueColors.length],
               )}
             >

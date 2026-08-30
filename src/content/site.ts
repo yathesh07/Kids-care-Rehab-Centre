@@ -35,10 +35,10 @@ export const site = {
 
   /** Only figures verifiable from client documents or the live site. */
   stats: [
-    { value: '16+', label: 'Years of service', detail: 'Since March 2009' },
-    { value: '20+', label: "Director's years of experience", detail: 'Dr. Radha Balachandar' },
-    { value: '7', label: 'Therapy disciplines', detail: 'Under one roof' },
-    { value: '2', label: 'Chennai locations', detail: 'Royapettah & Madipakkam' },
+    { value: '16+', label: 'Years of service', detail: 'Since March 2009', highlight: false },
+    { value: '20+', label: "Director's years of experience", detail: 'Dr. Radha Balachandar', highlight: false },
+    { value: '5000+', label: 'Children impacted', detail: 'Across all programs', highlight: true },
+    { value: '2', label: 'Chennai locations', detail: 'Royapettah & Madipakkam', highlight: false },
   ],
 
   /** Statutory registrations — from TRUST DETAILS WORD.docx */

@@ -98,15 +98,34 @@ export function StatStrip() {
         stagger={0.07}
       >
         {site.stats.map((s) => (
-          <RevealItem key={s.label} className="flex flex-col gap-0.5 bg-white p-5 sm:p-6" y={14}>
+          <RevealItem
+            key={s.label}
+            className={cn(
+              'flex flex-col gap-0.5 p-5 sm:p-6',
+              s.highlight ? 'bg-accent-400 text-ink-900' : 'bg-white',
+            )}
+            y={14}
+          >
             {/* value renders first visually; dt stays first in the DOM for semantics */}
-            <dt className="order-2 font-display text-sm font-semibold text-ink-800">
+            <dt
+              className={cn(
+                'order-2 font-display text-sm font-semibold',
+                s.highlight ? 'text-ink-900' : 'text-ink-800',
+              )}
+            >
               {s.label}
             </dt>
-            <dd className="order-1 font-display text-3xl font-bold text-brand-600 sm:text-4xl">
+            <dd
+              className={cn(
+                'order-1 font-display text-3xl font-bold sm:text-4xl',
+                s.highlight ? 'text-ink-900' : 'text-brand-600',
+              )}
+            >
               {s.value}
             </dd>
-            <dd className="order-3 text-xs text-ink-500">{s.detail}</dd>
+            <dd className={cn('order-3 text-xs', s.highlight ? 'text-ink-800/70' : 'text-ink-500')}>
+              {s.detail}
+            </dd>
           </RevealItem>
         ))}
       </RevealGroup>

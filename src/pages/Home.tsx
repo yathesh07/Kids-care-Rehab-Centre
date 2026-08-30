@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Button, Card, Section, SectionHead } from '@/components/ui'
+import { Button, Card, cn, Section, SectionHead } from '@/components/ui'
 import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal'
 import { galleryImages } from '@/content/gallery'
 import { CTABand, ConditionGrid, ServiceGrid, StatStrip } from '@/components/sections'
@@ -39,9 +39,38 @@ export default function Home() {
             </h1>
 
             <p className="mt-5 max-w-[54ch] text-lg text-ink-600">
-              Speech, occupational, behaviour and physiotherapy, special education and early
-              intervention — delivered by one multidisciplinary team, built around your child.
+              Four divisions, one mission — helping every child and family we work with reach
+              their full potential.
             </p>
+
+            <RevealGroup className="mt-5 grid grid-cols-2 gap-2.5 sm:max-w-[26rem]" stagger={0.06}>
+              {[
+                { name: 'KCRC', desc: 'Therapy & rehabilitation', to: '/services' },
+                { name: 'Special School', desc: 'Special education' },
+                { name: 'BRAIN2ACT', desc: "Director's movement program", to: '/programs/brain2act' },
+                { name: 'CDEC', desc: 'Vocational training centre' },
+              ].map((d) => {
+                const inner = (
+                  <>
+                    <span className="font-display text-sm font-bold text-brand-700">{d.name}</span>
+                    <span className="text-xs text-ink-500">{d.desc}</span>
+                  </>
+                )
+                const cls =
+                  'flex flex-col rounded-xl border border-brand-200/70 bg-white px-3.5 py-2.5 transition-colors'
+                return (
+                  <RevealItem key={d.name}>
+                    {d.to ? (
+                      <Link to={d.to} className={cn(cls, 'hover:border-brand-300 hover:bg-brand-50')}>
+                        {inner}
+                      </Link>
+                    ) : (
+                      <div className={cls}>{inner}</div>
+                    )}
+                  </RevealItem>
+                )
+              })}
+            </RevealGroup>
 
             <div className="mt-8 flex flex-wrap gap-3">
               <Button to="/contact">Book an appointment</Button>

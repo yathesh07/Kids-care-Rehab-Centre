@@ -1,10 +1,11 @@
 /**
  * Gallery photographs.
- * Client confirmed 2026-08-27 that parental consent is on file for the event
+ * Client confirmed 2026-08-27 that parental consent is on file for the events
  * these were taken at, clearing them for publication under the DPDP Act 2023.
- * Source: GALLERY.docx / Gallery folder. Selected for image quality and to
- * cover a spread of facility life — therapy sessions, outreach, and events —
- * rather than repeating near-identical shots of the same backdrop.
+ * Source: GALLERY.docx / Gallery folder (103 photos, all published 2026-08-30).
+ * The first nine entries are hand-picked and captioned for variety on the
+ * homepage preview strip; the remaining moment-* entries are the full event
+ * set with a generic caption (individual shots were not captioned one by one).
  * Files live in public/gallery-photos/, resized to max 1400px wide and stripped of
  * EXIF metadata (including GPS) before publishing.
  */
@@ -58,4 +59,505 @@ export const galleryImages: {
     alt: 'Families and children seated together at a centre event',
     category: 'events',
   },
+  {
+    src: '/gallery-photos/moment-004.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-005.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-006.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-007.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-008.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-009.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-010.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-011.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-012.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-013.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-014.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-015.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-016.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-017.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-018.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-019.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-020.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-021.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-022.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-023.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-024.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-025.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-026.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-027.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-028.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-029.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-030.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-031.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-032.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-033.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-034.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-035.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-036.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-037.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-038.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-039.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-040.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-041.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-042.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-043.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-044.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-045.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-046.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-047.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-048.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-049.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-050.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-051.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-052.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-053.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-054.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-055.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-056.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-057.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-058.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-059.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-060.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-061.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-062.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-063.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-064.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-065.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-066.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-067.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-068.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-069.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-070.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-071.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-072.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-073.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-074.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-075.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-076.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-077.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-078.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-079.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-080.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-081.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-082.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-083.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-084.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-085.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-086.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-087.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-088.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-089.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-090.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-091.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-092.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-093.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-094.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-095.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-096.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-097.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-098.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-099.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-100.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-101.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-102.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+  {
+    src: '/gallery-photos/moment-103.jpg',
+    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
+    category: 'events',
+  },
+
 ]

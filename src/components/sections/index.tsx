@@ -89,6 +89,9 @@ export function PageHero({
 }
 
 /* -------------------------------------------------------- StatStrip */
+const statTileColors = ['bg-white', 'bg-teal-50', 'bg-sky-50', 'bg-brand-50']
+const statValueColors = ['text-brand-600', 'text-teal-600', 'text-sky-600', 'text-brand-600']
+
 export function StatStrip() {
   return (
     <div className="container-page -mt-8 sm:-mt-10">
@@ -97,12 +100,12 @@ export function StatStrip() {
         className="grid grid-cols-2 gap-px overflow-hidden rounded-card border border-ink-200 bg-ink-200 shadow-lift lg:grid-cols-4"
         stagger={0.07}
       >
-        {site.stats.map((s) => (
+        {site.stats.map((s, i) => (
           <RevealItem
             key={s.label}
             className={cn(
               'flex flex-col gap-0.5 p-5 sm:p-6',
-              s.highlight ? 'bg-accent-400 text-ink-900' : 'bg-white',
+              s.highlight ? 'bg-accent-400 text-ink-900' : statTileColors[i % statTileColors.length],
             )}
             y={14}
           >
@@ -118,7 +121,7 @@ export function StatStrip() {
             <dd
               className={cn(
                 'order-1 font-display text-3xl font-bold sm:text-4xl',
-                s.highlight ? 'text-ink-900' : 'text-brand-600',
+                s.highlight ? 'text-ink-900' : statValueColors[i % statValueColors.length],
               )}
             >
               {s.value}
@@ -134,41 +137,59 @@ export function StatStrip() {
 }
 
 /* ------------------------------------------------------ ServiceGrid */
+const serviceCardColors = [
+  { accent: 'brand' as const, chip: 'bg-brand-50 text-brand-500 group-hover:bg-brand-100', text: 'text-brand-600', title: 'group-hover:text-brand-700' },
+  { accent: 'teal' as const, chip: 'bg-teal-50 text-teal-500 group-hover:bg-teal-100', text: 'text-teal-600', title: 'group-hover:text-teal-700' },
+  { accent: 'coral' as const, chip: 'bg-coral-50 text-coral-500 group-hover:bg-coral-100', text: 'text-coral-600', title: 'group-hover:text-coral-700' },
+  { accent: 'sky' as const, chip: 'bg-sky-50 text-sky-500 group-hover:bg-sky-100', text: 'text-sky-600', title: 'group-hover:text-sky-700' },
+]
+
 export function ServiceGrid({ limit }: { limit?: number }) {
   const list = limit ? services.slice(0, limit) : services
   return (
     <RevealGroup className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3" stagger={0.06}>
-      {list.map((s) => (
-        <RevealItem key={s.slug}>
-          <Card to={`/services/${s.slug}`} className="h-full">
-            <span className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-brand-500 transition-colors group-hover:bg-brand-100">
-              <ServiceIcon name={s.icon} className="h-6 w-6" />
-            </span>
-            <h3 className="mb-2 text-lg group-hover:text-brand-700">{s.name}</h3>
-            <p className="mb-4 flex-1 text-[0.95rem] text-ink-600">{s.short}</p>
-            <span className="inline-flex items-center gap-1.5 font-display text-sm font-semibold text-brand-600">
-              Learn more
-              <IconArrow className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-            </span>
-          </Card>
-        </RevealItem>
-      ))}
+      {list.map((s, i) => {
+        const c = serviceCardColors[i % serviceCardColors.length]
+        return (
+          <RevealItem key={s.slug}>
+            <Card to={`/services/${s.slug}`} className="h-full" accent={c.accent}>
+              <span className={cn('mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl transition-colors', c.chip)}>
+                <ServiceIcon name={s.icon} className="h-6 w-6" />
+              </span>
+              <h3 className={cn('mb-2 text-lg', c.title)}>{s.name}</h3>
+              <p className="mb-4 flex-1 text-[0.95rem] text-ink-600">{s.short}</p>
+              <span className={cn('inline-flex items-center gap-1.5 font-display text-sm font-semibold', c.text)}>
+                Learn more
+                <IconArrow className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+              </span>
+            </Card>
+          </RevealItem>
+        )
+      })}
     </RevealGroup>
   )
 }
 
 /* ---------------------------------------------------- ConditionGrid */
+const conditionDotColors = ['bg-teal-400', 'bg-coral-400', 'bg-sky-400', 'bg-brand-400', 'bg-accent-500']
+
 export function ConditionGrid({ limit }: { limit?: number }) {
   const list = limit ? conditions.slice(0, limit) : conditions
   return (
     <RevealGroup className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" stagger={0.05}>
-      {list.map((c) => (
+      {list.map((c, i) => (
         <RevealItem key={c.slug}>
-          <Card to={`/conditions/${c.slug}`} className="h-full border-teal-200/60 p-5">
-            <h3 className="mb-1.5 text-base group-hover:text-teal-700">
-              {c.name}
-              {c.abbr && <span className="ml-1.5 text-ink-400">({c.abbr})</span>}
-            </h3>
+          <Card to={`/conditions/${c.slug}`} className="h-full border-teal-200/60 p-5" accent="teal">
+            <span className="mb-2 flex items-center gap-2">
+              <span
+                aria-hidden="true"
+                className={cn('h-2.5 w-2.5 shrink-0 rounded-full', conditionDotColors[i % conditionDotColors.length])}
+              />
+              <h3 className="text-base group-hover:text-teal-700">
+                {c.name}
+                {c.abbr && <span className="ml-1.5 text-ink-400">({c.abbr})</span>}
+              </h3>
+            </span>
             <p className="mb-3 flex-1 text-sm text-ink-600">{c.short}</p>
             <span className="inline-flex items-center gap-1.5 font-display text-sm font-semibold text-teal-600">
               How we help
@@ -203,7 +224,7 @@ export function CTABand({
           <Button
             href={whatsappUrl}
             variant="secondary"
-            className="border-brand-500 bg-transparent text-white hover:border-accent-400 hover:bg-brand-600 hover:text-white"
+            className="!border-brand-300 !bg-transparent !text-white hover:!border-accent-400 hover:!bg-white/10"
           >
             Chat on WhatsApp
           </Button>

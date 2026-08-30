@@ -41,6 +41,26 @@
   --color-teal-600: #226776;
   --color-teal-700: #1c525e;
 
+  /* Coral — playful third accent, used sparingly for warmth and variety */
+  --color-coral-50: #fdf1ee;
+  --color-coral-100: #fbe3dc;
+  --color-coral-200: #f5c2b3;
+  --color-coral-300: #ec9a83;
+  --color-coral-400: #e2745a;
+  --color-coral-500: #d15638;
+  --color-coral-600: #b1442a;
+  --color-coral-700: #8c3521;
+
+  /* Sky — fourth accent, cool counterpoint to marigold/coral for a lively palette */
+  --color-sky-50: #eef5fb;
+  --color-sky-100: #dfebf6;
+  --color-sky-200: #b9d6ec;
+  --color-sky-300: #8bb9db;
+  --color-sky-400: #5c98c4;
+  --color-sky-500: #3c7cac;
+  --color-sky-600: #2f628a;
+  --color-sky-700: #274f6f;
+
   /* Neutrals — biased green, not default grey */
   --color-ink-50: #f7f8f7;
   --color-ink-100: #eef0ee;

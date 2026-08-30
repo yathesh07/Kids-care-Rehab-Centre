@@ -45,23 +45,22 @@ export default function Home() {
 
             <RevealGroup className="mt-5 grid grid-cols-2 gap-2.5 sm:max-w-[26rem]" stagger={0.06}>
               {[
-                { name: 'KCRC', desc: 'Therapy & rehabilitation', to: '/services' },
-                { name: 'Special School', desc: 'Special education' },
-                { name: 'BRAIN2ACT', desc: "Director's movement program", to: '/programs/brain2act' },
-                { name: 'CDEC', desc: 'Vocational training centre' },
+                { name: 'KCRC', desc: 'Therapy & rehabilitation', to: '/services', border: 'border-brand-200', bg: 'bg-brand-50', hoverBorder: 'hover:border-brand-300', hoverBg: 'hover:bg-brand-100', text: 'text-brand-700' },
+                { name: 'Special School', desc: 'Special education', border: 'border-teal-200', bg: 'bg-teal-50', hoverBorder: 'hover:border-teal-300', hoverBg: 'hover:bg-teal-100', text: 'text-teal-700' },
+                { name: 'BRAIN2ACT', desc: "Director's movement program", to: '/programs/brain2act', border: 'border-coral-200', bg: 'bg-coral-50', hoverBorder: 'hover:border-coral-300', hoverBg: 'hover:bg-coral-100', text: 'text-coral-700' },
+                { name: 'CDEC', desc: 'Vocational training centre', border: 'border-sky-200', bg: 'bg-sky-50', hoverBorder: 'hover:border-sky-300', hoverBg: 'hover:bg-sky-100', text: 'text-sky-700' },
               ].map((d) => {
                 const inner = (
                   <>
-                    <span className="font-display text-sm font-bold text-brand-700">{d.name}</span>
+                    <span className={cn('font-display text-sm font-bold', d.text)}>{d.name}</span>
                     <span className="text-xs text-ink-500">{d.desc}</span>
                   </>
                 )
-                const cls =
-                  'flex flex-col rounded-xl border border-brand-200/70 bg-white px-3.5 py-2.5 transition-colors'
+                const cls = cn('flex flex-col rounded-xl border px-3.5 py-2.5 transition-colors', d.border, d.bg)
                 return (
                   <RevealItem key={d.name}>
                     {d.to ? (
-                      <Link to={d.to} className={cn(cls, 'hover:border-brand-300 hover:bg-brand-50')}>
+                      <Link to={d.to} className={cn(cls, d.hoverBorder, d.hoverBg)}>
                         {inner}
                       </Link>
                     ) : (
@@ -114,6 +113,18 @@ export default function Home() {
               className="absolute -bottom-8 -left-8 h-28 w-28 rounded-full bg-brand-300/40 blur-2xl"
               animate={{ y: [0, 12, 0] }}
               transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
+            />
+            <motion.span
+              aria-hidden="true"
+              className="absolute top-1/3 -right-10 h-16 w-16 rounded-full bg-coral-300/40 blur-xl"
+              animate={{ y: [0, -14, 0], x: [0, 6, 0] }}
+              transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+            />
+            <motion.span
+              aria-hidden="true"
+              className="absolute bottom-1/4 -right-4 h-12 w-12 rounded-full bg-sky-300/40 blur-xl"
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut', delay: 0.3 }}
             />
             <div className="relative aspect-4/3 overflow-hidden rounded-[1.75rem] border border-brand-200/70 shadow-lift">
               <img

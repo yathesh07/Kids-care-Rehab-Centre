@@ -80,14 +80,16 @@ export function Section({
 }: {
   children: ReactNode
   className?: string
-  tone?: 'paper' | 'white' | 'brand' | 'brandDark'
+  tone?: 'paper' | 'white' | 'brand' | 'brandDark' | 'accent' | 'teal'
   id?: string
 }) {
   const tones = {
     paper: 'bg-paper',
     white: 'bg-white',
     brand: 'bg-brand-50',
-    brandDark: 'bg-brand-700 text-brand-50',
+    brandDark: 'bg-linear-to-br from-brand-700 via-brand-600 to-teal-700 text-brand-50',
+    accent: 'bg-accent-50',
+    teal: 'bg-teal-50',
   }
   return (
     <section id={id} className={cn('py-14 sm:py-20', tones[tone], className)}>
@@ -151,20 +153,34 @@ export function SectionHead({
 }
 
 /* -------------------------------------------------------------- Card */
+const cardAccentBorders = {
+  brand: 'hover:border-brand-300',
+  teal: 'hover:border-teal-300',
+  coral: 'hover:border-coral-300',
+  sky: 'hover:border-sky-300',
+  accent: 'hover:border-accent-300',
+} as const
+
 export function Card({
   to,
   children,
   className,
   interactive = true,
+  accent = 'brand',
 }: {
   to?: string
   children: ReactNode
   className?: string
   interactive?: boolean
+  accent?: keyof typeof cardAccentBorders
 }) {
   const classes = cn(
     'group flex flex-col rounded-card border border-ink-200/70 bg-white p-6 shadow-soft',
-    interactive && 'transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-200 hover:shadow-lift',
+    interactive &&
+      cn(
+        'transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lift',
+        cardAccentBorders[accent],
+      ),
     className,
   )
   if (to) {
@@ -183,12 +199,14 @@ export function Chip({
   tone = 'brand',
 }: {
   children: ReactNode
-  tone?: 'brand' | 'accent' | 'teal' | 'warn'
+  tone?: 'brand' | 'accent' | 'teal' | 'coral' | 'sky' | 'warn'
 }) {
   const tones = {
     brand: 'bg-brand-100 text-brand-700',
     accent: 'bg-accent-100 text-accent-700',
     teal: 'bg-teal-100 text-teal-700',
+    coral: 'bg-coral-100 text-coral-700',
+    sky: 'bg-sky-100 text-sky-700',
     warn: 'bg-accent-100 text-accent-700 border border-accent-300',
   }
   return (

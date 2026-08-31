@@ -80,21 +80,70 @@ export const about = {
 
   director: {
     name: 'Dr. R. Radha Balachandar',
-    credentials: 'PhD, MPT (Paediatrics), MSc (Psychology), PGD (Child Psychology), NLP Practitioner',
-    role: 'Director & Founder of the BRAIN2ACT Program',
+    credentials:
+      'PhD, MPT (Paediatric), M.Sc. (Psychology), PG Diploma in Counselling Psychology, D.Acu, NLP and Reiki Master',
+    role: 'Founder & Director, Kids Care Rehab Centre · Director, KCR Special School · Course Coordinator, CDEC Vocational Training Centre · Founder, BRAIN2ACT',
     body: [
-      'Dr. R. Radha Balachandar is the Director of Kids Care Rehab Centre in Chennai and the founder of the BRAIN2ACT Program. She is a Paediatric Physiotherapist and Psychological Counsellor with more than twenty years of experience, specialising in early intervention, sensory integration, behaviour therapy, child developmental therapies, functional training, oral motor therapy, rhythmic movement training, remedial therapy and social skills training.',
-      'She is the author of “Understanding Autism – A Guide to Parents”, and the Tamil books “Autism Oru Paarvai” and “Maram Yerum Meen”, a book on ADHD and learning disability.',
+      'Dr. R. Radha Balachandar is the Founder and Director of Kids Care Rehab Centre, Director of KCR Special School, Course Coordinator of CDEC Vocational Training Centre and Founder of BRAIN2ACT. With over 20 years of experience, she brings together paediatric physiotherapy, psychology, counselling, early intervention, sensory and movement-based approaches, behaviour support, special education, parent guidance and professional training.',
+      'Her doctoral research at the University of Madras focused on movement-based intervention for children with autism, ADHD and learning difficulties. Her work translates clinical knowledge into practical programmes that strengthen attention, memory, coordination, handwriting, learning readiness, communication, emotional regulation and everyday independence. She has trained parents, teachers, therapists and healthcare professionals in India and internationally, including programmes connected with the Kingdom of Eswatini and Malaysia.',
+      'She is the author of “Understanding Autism – A Guide to Parents”, and the Tamil books “Autism Oru Paarvai” and “Maram Yerum Meen” (ADHD and learning disability), among other titles listed below.',
     ],
     honours: [
-      'Award from the Governor of Tamil Nadu, Thiru R. N. Ravi, at Raj Bhavan, as an ambassador for promoting mental health awareness and support',
-      'Distinguished Clinician Award — Indian Physiotherapy Association conference, Chennai, March 2020',
+      'Distinguished Clinician Award — Indian Physiotherapy Association Conference, Chennai, March 2020',
       'Best Physiotherapist Award — International Physiotherapy Conference, THERACON19',
-      'Best Paediatric Physiotherapist — Medical Excellence Award, World Tamil Chamber of Commerce',
-      'Delivered training on developmental disorders, autism, ADHD and learning disabilities for physiotherapists, occupational therapists and speech therapists, organised by the Ministry of Health, Kingdom of Eswatini',
+      'Best Paediatric Physiotherapist — Medical Excellence Award, World Tamil Chamber of Commerce (2017, per her Practo profile)',
+      'Recognition at Raj Bhavan from the Governor of Tamil Nadu for work supporting mental-health awareness',
+      'Seva Rathna Award — International Autism Awareness Day 2026, Chennai (as shared publicly by Dr. Radha Balachandar)',
+    ],
+    training: [
+      'Training programmes on developmental disorders, autism, ADHD and learning disabilities organised through the Minister of Health, Kingdom of Eswatini, for physiotherapists, occupational therapists and speech therapists',
+      'Autism parent training programme in the Kingdom of Eswatini',
+      'National and international workshops for parents, children, healthcare professionals, teachers and school leaders in India and Malaysia',
+      'Awareness and training programmes through schools, universities, professional bodies and community programmes',
     ],
   },
 }
+
+/**
+ * Journey timeline. 2009 (founding) and 2023–2026 milestones are drawn from
+ * KCRC_Website_Content_Edited_Final.docx. Per the client's own note in that document,
+ * the 2021–2022 and 2025 rows still need to be completed from the centre's internal
+ * event register / approved Instagram archive before publication — flagged as draft
+ * below rather than filled with invented detail.
+ */
+export const journey: { year: string; milestone: string; draft?: boolean }[] = [
+  {
+    year: '2009',
+    milestone: 'Kids Care Rehab Centre begins its therapy and training journey in Chennai.',
+  },
+  {
+    year: '2021–2022',
+    milestone:
+      'Continued therapy, parent support, awareness and training activities. [Awaiting verified centre records and photos from this period.]',
+    draft: true,
+  },
+  {
+    year: '2023',
+    milestone:
+      'Autism awareness outreach with Chettinad School of Physiotherapy; Dr. Radha Balachandar addressed early identification and intervention for ADHD and learning disabilities, including a programme for 100+ government school teachers.',
+  },
+  {
+    year: '2024',
+    milestone:
+      'Free medical screening camp in Royapettah screened 100+ children for autism, ADHD, developmental delays and learning disabilities, with a parent interaction session.',
+  },
+  {
+    year: '2025',
+    milestone:
+      "The centre's verified annual activities, workshops, parent programmes and outreach for this year are being compiled from internal records and the approved Instagram archive.",
+    draft: true,
+  },
+  {
+    year: '2026',
+    milestone:
+      '18th Annual Day with an Autism Awareness Camp; online-safety and emotional-protection awareness; an Inclusive Job Fair; an MoU with LICET (17 August 2026); and continued professional and community programmes.',
+  },
+]
 
 /** Adult Physio Care — retained from the existing site. Real, active service line. */
 export const adultPhysio = {
@@ -118,6 +167,8 @@ export const adultPhysio = {
     'Wax therapy',
     'Shoulder wheel and pulley',
     'Traction — ICT and IPT',
+    'Functional Electrical Stimulation (FES)',
+    'Pulsed Electromagnetic Field Therapy (PEMF)',
     'Swiss ball and balance board',
     'Exercise therapy',
   ],
@@ -178,6 +229,62 @@ export const books = [
     language: 'Tamil',
     description:
       'A Tamil book on ADHD and learning disability, written for parents and educators supporting children who learn differently.',
+    links: [],
+  },
+  {
+    title: 'Kuzhandhai Valarppil Puthu Puthu Yukthigal',
+    subtitle: 'குழந்தை வளர்ப்பில் புது புது யுக்திகள்',
+    language: 'Tamil',
+    description: 'Practical, contemporary strategies for Tamil-speaking parents raising young children.',
+    links: [],
+  },
+  {
+    title: 'Foundations of Early Childhood Care & Education',
+    subtitle: '',
+    language: 'English',
+    description: 'A resource on early childhood care and education foundations for parents and educators.',
+    links: [],
+  },
+  {
+    title: 'Understanding Child Psychology & Child Counselling',
+    subtitle: '',
+    language: 'English',
+    description: 'An introduction to child psychology and counselling approaches for families and professionals.',
+    links: [],
+  },
+  {
+    title: 'Digital Parenting',
+    subtitle: '',
+    language: 'English',
+    description: 'Guidance for parents navigating technology, screen time and digital habits with their children.',
+    links: [],
+  },
+  {
+    title: 'Learning Disabilities, ADHD & Neurodiversity',
+    subtitle: '',
+    language: 'English',
+    description: 'A resource on learning disabilities, ADHD and neurodiversity for parents and educators.',
+    links: [],
+  },
+  {
+    title: 'Developmental Therapies',
+    subtitle: '',
+    language: 'English',
+    description: 'An overview of developmental therapy approaches used in paediatric rehabilitation.',
+    links: [],
+  },
+  {
+    title: 'Worksheets & Activities',
+    subtitle: '',
+    language: 'English',
+    description: 'Practical worksheets and activities for home-based practice between therapy sessions.',
+    links: [],
+  },
+  {
+    title: 'Becoming a Filmmaker',
+    subtitle: '',
+    language: 'English',
+    description: "Dr. Radha Balachandar's book outside the clinical space, on the craft of filmmaking.",
     links: [],
   },
 ]

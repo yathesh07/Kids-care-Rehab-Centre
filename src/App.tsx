@@ -31,6 +31,17 @@ const FaqPage = named(() => import('@/pages/Misc'), 'FaqPage')
 const PrivacyPage = named(() => import('@/pages/Misc'), 'PrivacyPage')
 const NotFoundPage = named(() => import('@/pages/Misc'), 'NotFoundPage')
 
+const FounderPage = named(() => import('@/pages/More'), 'FounderPage')
+const KcrSpecialSchoolPage = named(() => import('@/pages/More'), 'KcrSpecialSchoolPage')
+const CdecPage = named(() => import('@/pages/More'), 'CdecPage')
+const AssessmentPage = named(() => import('@/pages/More'), 'AssessmentPage')
+const SuccessStoriesPage = named(() => import('@/pages/More'), 'SuccessStoriesPage')
+const ImpactReviewsPage = named(() => import('@/pages/More'), 'ImpactReviewsPage')
+const DonatePage = named(() => import('@/pages/More'), 'DonatePage')
+const CsrPage = named(() => import('@/pages/More'), 'CsrPage')
+const CompliancePage = named(() => import('@/pages/More'), 'CompliancePage')
+const MediaPage = named(() => import('@/pages/More'), 'MediaPage')
+
 function RouteFallback() {
   return (
     <div className="flex min-h-[60vh] items-center justify-center" role="status" aria-live="polite">
@@ -70,6 +81,16 @@ export default function App() {
             <Route path="/locations/:slug" element={<BranchDetailPage />} />
 
             <Route path="/adult-physio-care" element={<AdultPhysioPage />} />
+            <Route path="/about/founder" element={<FounderPage />} />
+            <Route path="/kcr-special-school" element={<KcrSpecialSchoolPage />} />
+            <Route path="/cdec" element={<CdecPage />} />
+            <Route path="/assessment" element={<AssessmentPage />} />
+            <Route path="/success-stories" element={<SuccessStoriesPage />} />
+            <Route path="/impact-reviews" element={<ImpactReviewsPage />} />
+            <Route path="/donate" element={<DonatePage />} />
+            <Route path="/csr" element={<CsrPage />} />
+            <Route path="/compliance" element={<CompliancePage />} />
+            <Route path="/media" element={<MediaPage />} />
             <Route path="/books" element={<BooksPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/testimonials" element={<TestimonialsPage />} />

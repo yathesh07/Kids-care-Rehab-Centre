@@ -4,8 +4,6 @@ import { Logo } from './Logo'
 import { Button, cn } from '@/components/ui'
 import { IconChevron, IconClose, IconMenu } from '@/components/ui/Icons'
 import { services } from '@/content/services'
-import { conditions } from '@/content/conditions'
-import { programs } from '@/content/programs'
 
 type NavItem = {
   label: string
@@ -15,34 +13,60 @@ type NavItem = {
 
 const nav: NavItem[] = [
   { label: 'Home', to: '/' },
-  { label: 'About', to: '/about' },
   {
-    label: 'Services',
+    label: 'About',
+    to: '/about',
+    children: [
+      { label: 'About us', to: '/about' },
+      { label: 'Dr. R. Radha Balachandar', to: '/about/founder' },
+      { label: 'Our journey', to: '/about#journey' },
+      { label: 'Locations', to: '/locations' },
+    ],
+  },
+  {
+    label: 'Child Therapies',
     to: '/services',
     children: [
-      { label: 'All services', to: '/services' },
+      { label: 'All therapies', to: '/services' },
       ...services.map((s) => ({ label: s.name, to: `/services/${s.slug}` })),
-      { label: 'Adult Physio Care', to: '/adult-physio-care' },
+      { label: 'Conditions we support', to: '/conditions' },
+      { label: 'Assessment', to: '/assessment' },
     ],
   },
+  { label: 'Adult Physiotherapy', to: '/adult-physio-care' },
+  { label: 'KCR Special School', to: '/kcr-special-school' },
+  { label: 'CDEC Vocational Training Centre', to: '/cdec' },
   {
-    label: 'Conditions',
-    to: '/conditions',
-    children: [
-      { label: 'All conditions', to: '/conditions' },
-      ...conditions.map((c) => ({ label: c.abbr ?? c.name, to: `/conditions/${c.slug}` })),
-    ],
-  },
-  {
-    label: 'Programs',
+    label: 'Programmes',
     to: '/programs',
     children: [
-      { label: 'All programs', to: '/programs' },
-      ...programs.map((p) => ({ label: p.name, to: `/programs/${p.slug}` })),
+      { label: 'BRAIN2ACT', to: '/programs/brain2act' },
+      { label: 'Parent Programmes', to: '/programs' },
+      { label: 'Camps & Workshops', to: '/programs/camps-and-workshops' },
+      { label: 'CDEC Vocational Training Centre', to: '/cdec' },
+      { label: 'All programmes', to: '/programs' },
     ],
   },
-  { label: 'Resources', to: '/books' },
-  { label: 'Locations', to: '/locations' },
+  {
+    label: 'Impact & Reviews',
+    to: '/impact-reviews',
+    children: [
+      { label: 'Impact & Reviews', to: '/impact-reviews' },
+      { label: 'Success Stories', to: '/success-stories' },
+      { label: 'Gallery', to: '/gallery' },
+      { label: 'Media', to: '/media' },
+    ],
+  },
+  {
+    label: 'Support Us',
+    to: '/donate',
+    children: [
+      { label: 'Donate', to: '/donate' },
+      { label: 'CSR Partnerships', to: '/csr' },
+      { label: 'Kids Rehab Charitable Trust', to: '/trust' },
+      { label: 'Compliance & Reports', to: '/compliance' },
+    ],
+  },
 ]
 
 export function Header() {

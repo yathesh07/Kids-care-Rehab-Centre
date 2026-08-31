@@ -1,11 +1,13 @@
-import { Button, Card, DraftNote, Section, SectionHead } from '@/components/ui'
+import { Button, Card, cn, DraftNote, Section, SectionHead } from '@/components/ui'
 import { CTABand, CallCard, CheckList, PageHero } from '@/components/sections'
 import { Seo } from '@/components/layout/Seo'
 import { RevealGroup, RevealItem } from '@/components/motion/Reveal'
 import { IconArrow } from '@/components/ui/Icons'
 import { adultPhysio, books } from '@/content/about'
+import { IconCheck } from '@/components/ui/Icons'
 import { faqs, testimonials } from '@/content/placeholders'
-import { galleryImages } from '@/content/gallery'
+import { galleryCategoryLabels, galleryImages, type GalleryCategory } from '@/content/gallery'
+import { useMemo, useState } from 'react'
 import { site } from '@/content/site'
 
 /* ------------------------------------------------ Adult Physio Care */
@@ -13,24 +15,39 @@ export function AdultPhysioPage() {
   return (
     <>
       <Seo
-        title="Adult Physio Care"
-        description="Specialised adult physiotherapy in Royapettah, Chennai — knee and shoulder pain, osteoarthritis, back and neck pain, stroke rehabilitation, and prenatal and postnatal programs."
+        title="Adult Physiotherapy in Royapettah, Chennai | KCRC"
+        description="Assessment-led adult and senior-citizen physiotherapy in Royapettah, Chennai — pain rehabilitation, mobility, balance and wheelchair-accessible care."
         path="/adult-physio-care"
       />
       <PageHero
-        eyebrow="For adults"
+        eyebrow="Move better. Feel stronger. Live more comfortably."
         title="Adult Physio Care"
         intro={adultPhysio.intro}
-        trail={[{ label: 'Services', to: '/services' }, { label: 'Adult Physio Care' }]}
+        trail={[{ label: 'Adult Physio Care' }]}
       />
 
       <Section tone="paper">
         <div className="grid gap-10 lg:grid-cols-[1.6fr_0.9fr] lg:gap-14">
           <div>
+            <div className="mb-8 flex gap-3 rounded-card border border-teal-200 bg-teal-50 p-5">
+              <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-teal-500 text-white">
+                <IconCheck className="h-4 w-4" />
+              </span>
+              <p className="text-[0.95rem] text-teal-800">{site.wheelchairAccess}</p>
+            </div>
+
             <h2 className="mb-5 text-2xl">Conditions we treat</h2>
             <CheckList items={adultPhysio.treats} tone="teal" />
 
-            <h2 className="mt-10 mb-5 text-2xl">Equipment at our Royapettah centre</h2>
+            <h2 className="mt-10 mb-5 text-2xl">Modern techniques &amp; rehabilitation equipment</h2>
+            <p className="mb-5 max-w-[68ch] text-ink-600">
+              Based on clinical assessment, care may include therapeutic exercise, stretching and
+              strengthening, posture correction, ergonomic guidance, balance and gait training,
+              movement retraining, appropriate hands-on techniques and home-exercise planning.
+              Available rehabilitation equipment and modalities may include IFT, traction, FES,
+              PEMF and other physiotherapy devices, selected according to the person's condition,
+              contraindications and treatment goals.
+            </p>
             <CheckList items={adultPhysio.equipment} tone="teal" />
 
             <h2 className="mt-10 mb-3 text-2xl">{adultPhysio.prenatal.title}</h2>
@@ -59,7 +76,7 @@ export function AdultPhysioPage() {
 
       <CTABand
         title="Book an adult physiotherapy assessment"
-        body="Our Royapettah centre offers assessment and treatment six days a week. Call or WhatsApp to arrange a time."
+        body="Our Royapettah centre offers assessment and treatment six days a week. Call or WhatsApp to arrange a time — senior-citizen and wheelchair-accessible physiotherapy available."
       />
     </>
   )
@@ -241,11 +258,18 @@ export function TestimonialsPage() {
 
 /* ----------------------------------------------------- Gallery */
 export function GalleryPage() {
+  const [active, setActive] = useState<GalleryCategory | 'all'>('all')
+  const usedCategories = useMemo(
+    () => Array.from(new Set(galleryImages.map((i) => i.category))) as GalleryCategory[],
+    [],
+  )
+  const shown = active === 'all' ? galleryImages : galleryImages.filter((i) => i.category === active)
+
   return (
     <>
       <Seo
         title="Gallery"
-        description="Photographs from Kids Care Rehab Centre, Chennai — therapy sessions, outreach visits and centre events."
+        description="Photographs from Kids Care Rehab Centre, Chennai — therapy sessions, outreach visits, Special School, CDEC training and centre events."
         path="/gallery"
       />
       <PageHero
@@ -255,14 +279,20 @@ export function GalleryPage() {
         trail={[{ label: 'Gallery' }]}
       />
       <Section tone="paper">
+        <DraftNote>
+          Photos are currently grouped under the categories they were tagged with at upload.
+          Re-sorting the full set into every category listed (Latest Equipment, Special School,
+          CDEC Graduation, Awards &amp; Recognition, etc.) needs the client's approved Instagram
+          archive (instagram.com/kidscare_rehab) so each photo is placed correctly — see{' '}
+          <a href="https://www.instagram.com/kidscare_rehab/" target="_blank" rel="noopener noreferrer" className="underline">
+            @kidscare_rehab
+          </a>
+          .
+        </DraftNote>
+
         {galleryImages.length === 0 ? (
           <div className="mx-auto max-w-2xl rounded-card border border-dashed border-accent-400 bg-accent-50 p-8 text-center">
             <h2 className="text-xl text-accent-700">Gallery pending consent clearance</h2>
-            <p className="mt-3 text-[0.95rem] text-ink-600">
-              91 photographs are available from the client, but many show identifiable children in
-              a therapy setting. Under the DPDP Act 2023 these require verifiable parental consent
-              before they can be published on a public website.
-            </p>
             <p className="mt-3 text-[0.95rem] text-ink-600">
               No images will be added here until the client confirms written consent per
               photograph, or approves a facility-and-events-only selection.
@@ -272,18 +302,46 @@ export function GalleryPage() {
             </Button>
           </div>
         ) : (
-          <RevealGroup className="columns-2 gap-4 lg:columns-3 [&>*]:mb-4" stagger={0.06}>
-            {galleryImages.map((img) => (
-              <RevealItem key={img.src} className="overflow-hidden rounded-card border border-ink-200">
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  loading="lazy"
-                  className="w-full transition-transform duration-500 hover:scale-105"
-                />
-              </RevealItem>
-            ))}
-          </RevealGroup>
+          <>
+            <div className="mb-8 flex flex-wrap gap-2">
+              <button
+                type="button"
+                onClick={() => setActive('all')}
+                className={cn(
+                  'rounded-full px-3.5 py-1.5 font-display text-xs font-semibold transition-colors',
+                  active === 'all' ? 'bg-brand-500 text-white' : 'bg-white text-ink-600 border border-ink-200 hover:border-brand-300',
+                )}
+              >
+                All ({galleryImages.length})
+              </button>
+              {usedCategories.map((c) => (
+                <button
+                  key={c}
+                  type="button"
+                  onClick={() => setActive(c)}
+                  className={cn(
+                    'rounded-full px-3.5 py-1.5 font-display text-xs font-semibold transition-colors',
+                    active === c ? 'bg-brand-500 text-white' : 'bg-white text-ink-600 border border-ink-200 hover:border-brand-300',
+                  )}
+                >
+                  {galleryCategoryLabels[c]} ({galleryImages.filter((i) => i.category === c).length})
+                </button>
+              ))}
+            </div>
+
+            <RevealGroup className="columns-2 gap-4 lg:columns-3 [&>*]:mb-4" stagger={0.06}>
+              {shown.map((img) => (
+                <RevealItem key={img.src} className="overflow-hidden rounded-card border border-ink-200">
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    loading="lazy"
+                    className="w-full transition-transform duration-500 hover:scale-105"
+                  />
+                </RevealItem>
+              ))}
+            </RevealGroup>
+          </>
         )}
       </Section>
       <CTABand />
@@ -365,9 +423,11 @@ export function TrustPage() {
             supporting therapy access for children from low-income families are welcome to get in
             touch.
           </p>
-          <Button to="/contact" className="mt-5">
-            Enquire about partnering
-          </Button>
+          <div className="mt-5 flex flex-wrap gap-3">
+            <Button to="/csr">CSR Partnerships</Button>
+            <Button to="/donate" variant="secondary">Donate</Button>
+            <Button to="/compliance" variant="secondary">Compliance &amp; Reports</Button>
+          </div>
         </div>
       </Section>
 

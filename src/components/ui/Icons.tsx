@@ -60,6 +60,47 @@ export const ServiceIcon = ({ name, className }: { name: IconName; className?: s
         <path {...stroke} d="M14 19v-1.2a3.6 3.6 0 0 1 6-2.7" />
       </>
     ),
+    sensory: (
+      <>
+        <circle {...stroke} cx="12" cy="12" r="3.2" />
+        <path {...stroke} d="M12 3v2.6M12 18.4V21M3 12h2.6M18.4 12H21M5.8 5.8l1.8 1.8M16.4 16.4l1.8 1.8M18.2 5.8l-1.8 1.8M7.6 16.4l-1.8 1.8" />
+      </>
+    ),
+    oralmotor: (
+      <>
+        <path {...stroke} d="M4.5 12c0-4.5 3.8-7.5 7.5-7.5s7.5 3 7.5 7.5-3.8 7.5-7.5 7.5c-1.2 0-2.3-.25-3.3-.7L5 20l1-3.4A7.4 7.4 0 0 1 4.5 12Z" />
+        <path {...stroke} d="M8.5 11.5c1 1 2 1.4 3.5 1.4s2.5-.4 3.5-1.4" />
+      </>
+    ),
+    social: (
+      <>
+        <circle {...stroke} cx="8" cy="9" r="2.6" />
+        <circle {...stroke} cx="16.5" cy="9.5" r="2.1" />
+        <path {...stroke} d="M3.5 19v-1.2a4.5 4.5 0 0 1 9 0V19" />
+        <path {...stroke} d="M13.2 19v-.9a4 4 0 0 1 7.3-2.3" />
+      </>
+    ),
+    braingym: (
+      <>
+        <circle {...stroke} cx="12" cy="5" r="2" />
+        <path {...stroke} d="M12 7v4M12 11 8 15M12 11l4 4M8 15l-2.5 4M16 15l2.5 4" />
+      </>
+    ),
+    reflex: (
+      <>
+        <path {...stroke} d="M4 12a8 8 0 0 1 14.5-4.6" />
+        <path {...stroke} d="M18.5 4v3.6H15" />
+        <path {...stroke} d="M20 12a8 8 0 0 1-14.5 4.6" />
+        <path {...stroke} d="M5.5 20v-3.6H9" />
+      </>
+    ),
+    tech: (
+      <>
+        <rect {...stroke} x="4" y="5" width="16" height="11" rx="1.6" />
+        <path {...stroke} d="M9 19.5h6M12 16v3.5" />
+        <path {...stroke} d="M8 9.5l2 2 2-2 2 2 2-2" />
+      </>
+    ),
   }
 
   return (

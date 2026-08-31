@@ -67,6 +67,13 @@ export function ProgramDetailPage() {
               ))}
             </div>
 
+            {program.pillars && (
+              <>
+                <h2 className="mt-10 mb-5 text-2xl">Website content pillars</h2>
+                <CheckList items={program.pillars} tone="teal" />
+              </>
+            )}
+
             {program.list && (
               <>
                 <h2 className="mt-10 mb-5 text-2xl">{program.list.title}</h2>

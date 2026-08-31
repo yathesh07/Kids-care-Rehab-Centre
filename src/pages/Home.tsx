@@ -7,6 +7,7 @@ import { CTABand, ConditionGrid, ServiceGrid, StatStrip } from '@/components/sec
 import { Seo, organisationSchema } from '@/components/layout/Seo'
 import { IconArrow, IconClock, IconPhone, IconPin } from '@/components/ui/Icons'
 import { site, whatsappUrl } from '@/content/site'
+import { IconCheck } from '@/components/ui/Icons'
 import { branches } from '@/content/branches'
 import { about } from '@/content/about'
 
@@ -14,7 +15,7 @@ export default function Home() {
   return (
     <>
       <Seo
-        title={site.name}
+        title="Kids Care Rehab Centre Chennai | Therapy & Special School"
         description={site.description}
         path="/"
         jsonLd={organisationSchema}
@@ -171,12 +172,80 @@ export default function Home() {
         </Reveal>
       </Section>
 
+      {/* ---------------------------------------------- four ways to connect */}
+      <Section tone="paper">
+        <SectionHead
+          eyebrow="One centre. Four ways to connect."
+          title="Whoever you are, there's a place to start"
+        />
+        <RevealGroup className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4" stagger={0.07}>
+          {[
+            {
+              title: 'For parents',
+              body: 'Begin with an assessment and receive an individualized plan combining specialised therapy, special education, parent guidance and home strategies.',
+              to: '/assessment',
+              cta: 'Book a child assessment',
+              tone: 'border-brand-200 bg-brand-50',
+            },
+            {
+              title: 'For adults & senior citizens',
+              body: 'Access assessment-led physiotherapy for pain, stiffness, weakness, mobility limitations, balance concerns, neurological rehabilitation and recovery, as clinically appropriate.',
+              to: '/adult-physio-care',
+              cta: 'Book adult physiotherapy',
+              tone: 'border-teal-200 bg-teal-50',
+            },
+            {
+              title: 'For donors',
+              body: "Help a child access therapy, education, assistive resources or family support. Eligible donations may qualify for 80G tax benefits.",
+              to: '/donate',
+              cta: 'Donate',
+              tone: 'border-coral-200 bg-coral-50',
+            },
+            {
+              title: 'For CSR companies',
+              body: 'Partner to strengthen therapy equipment, accessible infrastructure, technology-enabled learning, camps, vocational training and outreach.',
+              to: '/csr',
+              cta: 'Discuss a CSR project',
+              tone: 'border-sky-200 bg-sky-50',
+            },
+          ].map((c) => (
+            <RevealItem key={c.title}>
+              <div className={cn('flex h-full flex-col gap-3 rounded-card border p-6', c.tone)}>
+                <h3 className="text-lg">{c.title}</h3>
+                <p className="flex-1 text-[0.95rem] text-ink-600">{c.body}</p>
+                <Button to={c.to} variant="secondary" size="sm" className="w-fit bg-white">
+                  {c.cta}
+                </Button>
+              </div>
+            </RevealItem>
+          ))}
+        </RevealGroup>
+      </Section>
+
+      {/* -------------------------------------------------- LICET milestone */}
+      <Section tone="white">
+        <div className="grid items-center gap-8 rounded-[1.5rem] border border-sky-200 bg-sky-50 p-8 sm:p-10 lg:grid-cols-[1.2fr_0.8fr]">
+          <div>
+            <span className="font-display text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase">
+              Latest milestone · {site.latestMilestone.date}
+            </span>
+            <h2 className="mt-2 text-2xl sm:text-3xl">{site.latestMilestone.title}</h2>
+            <p className="mt-3 max-w-[62ch] text-ink-600">{site.latestMilestone.body}</p>
+          </div>
+          <div className="flex flex-wrap gap-3 lg:justify-end">
+            <span className="rounded-full border border-dashed border-accent-400 bg-accent-50 px-4 py-2 text-xs font-semibold text-accent-700">
+              Coming soon — Kids Care 360 clinical management
+            </span>
+          </div>
+        </div>
+      </Section>
+
       {/* ------------------------------------------------------ services */}
       <Section tone="white">
         <SectionHead
           eyebrow="Our services"
           title="Comprehensive therapy, tailored to your child"
-          intro="Seven therapy and education disciplines working together under one roof, with a single individualized plan for each child."
+          intro="Twelve specialised therapies working together under one roof, with a single individualized plan for each child and adult."
         />
         <ServiceGrid />
         <div className="mt-8">
@@ -223,6 +292,54 @@ export default function Home() {
             </Button>
           </div>
         </Reveal>
+      </Section>
+
+      {/* ------------------------------------------- school, CDEC, access */}
+      <Section tone="white">
+        <RevealGroup className="grid gap-5 lg:grid-cols-3" stagger={0.08}>
+          <RevealItem>
+            <Card to="/kcr-special-school" className="h-full" accent="brand">
+              <span className="mb-3 w-fit rounded-full bg-brand-100 px-3 py-1 font-display text-xs font-semibold text-brand-700">
+                Admissions open 2026–27
+              </span>
+              <h3 className="mb-2 text-lg">KCR Special School</h3>
+              <p className="flex-1 text-[0.95rem] text-ink-600">
+                Individualized special education in a supportive environment — pre-primary and
+                primary. Registered with the Commissionerate for the Welfare of Differently
+                Abled, Government of Tamil Nadu.
+              </p>
+              <span className="mt-3 inline-flex items-center gap-1.5 font-display text-sm font-semibold text-brand-600">
+                Enquire about admission
+                <IconArrow className="h-4 w-4" />
+              </span>
+            </Card>
+          </RevealItem>
+          <RevealItem>
+            <Card to="/cdec" className="h-full" accent="teal">
+              <span className="mb-3 w-fit rounded-full bg-teal-100 px-3 py-1 font-display text-xs font-semibold text-teal-700">
+                NCVRT-approved
+              </span>
+              <h3 className="mb-2 text-lg">CDEC Vocational Training Centre</h3>
+              <p className="flex-1 text-[0.95rem] text-ink-600">
+                Certificate and diploma-oriented professional training preparing committed
+                professionals to serve children and families with competence and sensitivity.
+              </p>
+              <span className="mt-3 inline-flex items-center gap-1.5 font-display text-sm font-semibold text-teal-600">
+                Explore courses
+                <IconArrow className="h-4 w-4" />
+              </span>
+            </Card>
+          </RevealItem>
+          <RevealItem>
+            <div className="flex h-full flex-col gap-3 rounded-card border border-sky-200 bg-sky-50 p-6">
+              <span className="mb-1 inline-flex h-10 w-10 items-center justify-center rounded-full bg-sky-500 text-white">
+                <IconCheck className="h-5 w-5" />
+              </span>
+              <h3 className="text-lg">Accessible care</h3>
+              <p className="flex-1 text-[0.95rem] text-ink-600">{site.wheelchairAccess}</p>
+            </div>
+          </RevealItem>
+        </RevealGroup>
       </Section>
 
       {/* ------------------------------------------------------ branches */}
@@ -316,6 +433,42 @@ export default function Home() {
             </Link>
           </div>
         </Reveal>
+      </Section>
+
+      {/* --------------------------------------- community impact & skills */}
+      <Section tone="white">
+        <SectionHead
+          eyebrow="Beyond our centres"
+          title="Community impact, skills for life"
+          intro="Kids Rehab Charitable Trust periodically conducts developmental screening camps, awareness programmes, parent guidance sessions, school and community outreach, professional workshops and subsidised support initiatives."
+        />
+        <RevealGroup className="grid gap-5 sm:grid-cols-2" stagger={0.08}>
+          <RevealItem>
+            <Card interactive={false} className="h-full gap-2" accent="coral">
+              <h3 className="text-lg">Parent empowerment — basket-making workshops</h3>
+              <p className="text-[0.95rem] text-ink-600">
+                Basket-making workshops for parents of children with special needs combine
+                practical learning, peer connection, confidence and the possibility of
+                home-based income generation.
+              </p>
+            </Card>
+          </RevealItem>
+          <RevealItem>
+            <Card interactive={false} className="h-full gap-2" accent="sky">
+              <h3 className="text-lg">Vocational training through baking</h3>
+              <p className="text-[0.95rem] text-ink-600">
+                Baking-based vocational sessions for students, adolescents and parents build
+                step-following, hygiene, measurement, teamwork and work readiness — building
+                ability-based livelihood pathways.
+              </p>
+            </Card>
+          </RevealItem>
+        </RevealGroup>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <Button to="/success-stories" variant="secondary">Success stories</Button>
+          <Button to="/impact-reviews" variant="secondary">Impact &amp; Reviews</Button>
+          <Button to="/csr" variant="secondary">Partner with us</Button>
+        </div>
       </Section>
 
       {/* ------------------------------------------------------- gallery */}

@@ -11,8 +11,8 @@ export function ServicesPage() {
   return (
     <>
       <Seo
-        title="Our Services"
-        description="Speech therapy, occupational therapy, physiotherapy, behaviour therapy, special education, early intervention and parent training for children in Chennai."
+        title="Child Therapy in Chennai | Physiotherapy, Speech & Sensory Care"
+        description="Paediatric physiotherapy, sensory integration, speech and language therapy, oral-motor, behaviour, social skills, special education and early intervention for children in Chennai."
         path="/services"
       />
       <PageHero

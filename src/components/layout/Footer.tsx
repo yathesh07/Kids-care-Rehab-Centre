@@ -6,14 +6,26 @@ import { IconInstagram, IconMail, IconPhone, IconPin, IconClock } from '@/compon
 
 const quickLinks = [
   { label: 'About us', to: '/about' },
+  { label: 'Dr. R. Radha Balachandar', to: '/about/founder' },
+  { label: 'Adult Physiotherapy', to: '/adult-physio-care' },
+  { label: 'KCR Special School', to: '/kcr-special-school' },
+  { label: 'CDEC Vocational Training Centre', to: '/cdec' },
   { label: 'Conditions we support', to: '/conditions' },
+  { label: 'Assessment', to: '/assessment' },
   { label: 'Programs & activities', to: '/programs' },
-  { label: 'Adult Physio Care', to: '/adult-physio-care' },
-  { label: 'Books & resources', to: '/books' },
-  { label: 'Charitable Trust', to: '/trust' },
+]
+
+const supportLinks = [
+  { label: 'Donate', to: '/donate' },
+  { label: 'CSR Partnerships', to: '/csr' },
+  { label: 'Kids Rehab Charitable Trust', to: '/trust' },
+  { label: 'Compliance & Reports', to: '/compliance' },
+  { label: 'Success Stories', to: '/success-stories' },
+  { label: 'Impact & Reviews', to: '/impact-reviews' },
   { label: 'Gallery', to: '/gallery' },
+  { label: 'Media', to: '/media' },
+  { label: 'Books & resources', to: '/books' },
   { label: 'FAQ', to: '/faq' },
-  { label: 'Contact', to: '/contact' },
 ]
 
 export function Footer() {
@@ -70,6 +82,19 @@ export function Footer() {
             </h2>
             <ul className="flex flex-col gap-2.5 text-sm">
               {quickLinks.map((l) => (
+                <li key={l.to}>
+                  <Link to={l.to} className="text-brand-200 transition-colors hover:text-white">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <h2 className="mt-6 mb-3 font-display text-sm font-semibold tracking-[0.12em] text-white uppercase">
+              Support us
+            </h2>
+            <ul className="flex flex-col gap-2.5 text-sm">
+              {supportLinks.map((l) => (
                 <li key={l.to}>
                   <Link to={l.to} className="text-brand-200 transition-colors hover:text-white">
                     {l.label}

@@ -1,7 +1,8 @@
 import { Section, SectionHead } from '@/components/ui'
 import { CTABand, CheckList, PageHero } from '@/components/sections'
 import { Seo } from '@/components/layout/Seo'
-import { about } from '@/content/about'
+import { about, journey } from '@/content/about'
+import { Button } from '@/components/ui'
 import { site } from '@/content/site'
 
 export default function About() {
@@ -107,16 +108,42 @@ export default function About() {
         </ol>
       </Section>
 
+      {/* --------------------------------------------------- journey */}
+      <Section tone="white" id="journey">
+        <SectionHead eyebrow="Our journey" title="20 years of dedicated service, learning and inclusion" />
+        <ol className="flex flex-col gap-4">
+          {journey.map((j) => (
+            <li
+              key={j.year}
+              className="flex flex-col gap-2 rounded-card border border-ink-200 bg-white p-5 sm:flex-row sm:items-start sm:gap-6"
+            >
+              <span className="w-24 shrink-0 font-display text-lg font-bold text-brand-600">{j.year}</span>
+              <p className="text-[0.95rem] text-ink-600">
+                {j.milestone}
+                {j.draft && (
+                  <span className="ml-2 rounded-full bg-accent-100 px-2 py-0.5 text-xs font-semibold text-accent-700">
+                    needs client verification
+                  </span>
+                )}
+              </p>
+            </li>
+          ))}
+        </ol>
+      </Section>
+
       {/* -------------------------------------------------- director */}
-      <Section tone="white">
-        <SectionHead eyebrow="Leadership" title="Meet our Director" />
-        <div className="grid gap-8 rounded-[1.5rem] border border-ink-200 bg-paper p-8 sm:p-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-12">
+      <Section tone="paper">
+        <SectionHead eyebrow="Leadership" title="Meet our Founder" />
+        <div className="grid gap-8 rounded-[1.5rem] border border-ink-200 bg-white p-8 sm:p-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-12">
           <div>
             <h3 className="text-2xl">{about.director.name}</h3>
             <p className="mt-2 text-sm text-ink-500">{about.director.credentials}</p>
             <p className="mt-3 font-display font-semibold text-brand-600">
               {about.director.role}
             </p>
+            <Button to="/about/founder" variant="secondary" size="sm" className="mt-5">
+              Full profile
+            </Button>
           </div>
           <div>
             <div className="flex flex-col gap-4">

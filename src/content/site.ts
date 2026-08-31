@@ -11,7 +11,7 @@ export const site = {
   parentTrust: 'Kids Rehab Charitable Trust',
   url: 'https://www.kidscarerehabcenter.in',
   description:
-    'Kids Care Rehab Centre provides speech, occupational, behaviour and physiotherapy, special education and early intervention for children with autism, ADHD, developmental delay and learning difficulties in Chennai. Adult physiotherapy also available.',
+    'Kids Care Rehab Centre in Chennai offers child and adult physiotherapy, speech and language therapy, sensory integration, special education, assessments, vocational training and technology-supported rehabilitation. Wheelchair-assisted lift access is available.',
 
   foundedYear: 2009,
   foundedText: 'March 2009',
@@ -27,6 +27,15 @@ export const site = {
     "Hello, I'd like to know more about therapy services at Kids Care Rehab Centre for my child.",
 
   hours: 'Monday – Saturday, 10:00 am – 8:00 pm',
+
+  /** CDEC Vocational Training Centre — separate enquiry line, per client-supplied content. */
+  cdecPhoneDisplay: '+91 6369 604 008',
+  cdecPhoneHref: 'tel:+916369604008',
+  cdecEmail: 'cdecvtc@gmail.com',
+  cdecNcvrtRegistration: 'NCVRT/TN/2492/VTC',
+
+  wheelchairAccess:
+    'Wheelchair-assisted lift access is available to help wheelchair users, persons with mobility limitations and senior citizens enter and move within the centre more safely. Please inform the team while booking so appropriate assistance can be arranged for your visit.',
 
   social: {
     instagram: 'https://www.instagram.com/kidscare_rehab',
@@ -64,6 +73,16 @@ export const site = {
   ],
   registrationValidity: 'AY 2025-26 to AY 2027-28',
   pan: 'AABTK7404K',
+
+  /** School registration — number/date not supplied; flag on the School page until confirmed. */
+  specialSchoolRegistrationBody: 'Commissionerate for the Welfare of Differently Abled, Government of Tamil Nadu',
+
+  /** Latest public milestone, from KCRC_Website_Content_Edited_Final.docx. */
+  latestMilestone: {
+    date: '17 August 2026',
+    title: 'MoU with LICET',
+    body: 'Kids Care Rehab Centre and Loyola-ICAM College of Engineering and Technology (LICET) signed an MoU at the Royapettah centre, accompanied by the inauguration of rehabilitation equipment. The occasion was graced by Dr. V. Irai Anbu, IAS (Retd.), and Rev. Dr. Justine Yasappan, SJ, Director of LICET. The partnership opens new possibilities in technology, clinical systems, student engagement, research and inclusive innovation.',
+  },
 } as const
 
 export const whatsappUrl = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(

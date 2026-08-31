@@ -6,6 +6,7 @@ export type Program = {
   short: string
   body: string[]
   list?: { title: string; items: string[] }
+  pillars?: string[]
   note?: string
   link?: { label: string; href: string }
 }
@@ -36,6 +37,16 @@ export const programs: Program[] = [
         'Weak academic performance, copying from the board, writing homework',
       ],
     },
+    pillars: [
+      'Attention and concentration',
+      'Memory and learning readiness',
+      'Handwriting and fine-motor coordination',
+      'Spelling and academic support',
+      'Movement-based learning activities',
+      'Emotional intelligence and self-awareness',
+      'Coordination and motor planning',
+      "Individualized goals linked to the child's learning profile",
+    ],
     note:
       'Radha Balachandar. “Effectiveness of ‘Brain2ACT’ Movement-based Intervention to enhance attention in students with Attention Deficit Hyperactivity Disorder (ADHD).” Journal of the Gujarat Research Society 21.16 (2019): 1940–1949.',
   },

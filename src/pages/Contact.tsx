@@ -23,11 +23,20 @@ export default function Contact() {
       />
 
       <PageHero
-        eyebrow="Contact us"
+        eyebrow="Parents, adult physiotherapy patients, donors and CSR partners — we're ready to connect"
         title="Book an appointment"
         intro="You do not need a diagnosis or a doctor’s referral. Tell us a little about your child and we’ll get back to you to arrange an assessment."
         trail={[{ label: 'Contact' }]}
-      />
+      >
+        <div className="mt-6 flex flex-wrap gap-2.5">
+          <Button to="/assessment" size="sm">Child Assessment</Button>
+          <Button to="/adult-physio-care" size="sm" variant="secondary">Adult Physiotherapy</Button>
+          <Button to="/kcr-special-school" size="sm" variant="secondary">School Admission</Button>
+          <Button to="/cdec" size="sm" variant="secondary">Course Enquiry</Button>
+          <Button to="/donate" size="sm" variant="secondary">Donate</Button>
+          <Button to="/csr" size="sm" variant="secondary">CSR Partnership</Button>
+        </div>
+      </PageHero>
 
       <Section tone="paper">
         <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
@@ -220,6 +229,10 @@ export default function Contact() {
               </div>
             </div>
 
+            <div className="rounded-card border border-teal-200 bg-teal-50 p-5 text-sm text-teal-800">
+              {site.wheelchairAccess}
+            </div>
+
             <div className="rounded-card border border-ink-200 bg-white p-6">
               <h2 className="mb-4 text-lg">Centre details</h2>
               <ul className="flex flex-col gap-3 text-[0.95rem] text-ink-600">
@@ -234,6 +247,24 @@ export default function Contact() {
                   >
                     <IconMail className="mt-0.5 h-4 w-4 shrink-0 text-brand-500" />
                     {site.email}
+                  </a>
+                </li>
+              </ul>
+
+              <h3 className="mt-6 mb-3 font-display text-sm font-semibold tracking-[0.1em] text-ink-800 uppercase">
+                CDEC Vocational Training Centre
+              </h3>
+              <ul className="flex flex-col gap-2 text-sm text-ink-600">
+                <li>
+                  <a href={site.cdecPhoneHref} className="flex items-start gap-2.5 hover:text-brand-600">
+                    <IconPhone className="mt-0.5 h-4 w-4 shrink-0 text-brand-500" />
+                    {site.cdecPhoneDisplay}
+                  </a>
+                </li>
+                <li>
+                  <a href={`mailto:${site.cdecEmail}`} className="flex items-start gap-2.5 break-all hover:text-brand-600">
+                    <IconMail className="mt-0.5 h-4 w-4 shrink-0 text-brand-500" />
+                    {site.cdecEmail}
                   </a>
                 </li>
               </ul>

@@ -20,7 +20,7 @@ export const conditions: Condition[] = [
       'Autism Spectrum Disorder is a developmental condition that can affect communication, social interaction, behaviour, sensory processing, and patterns of play or activities. Every child with autism is different and may have different strengths and support needs.',
       'Our team provides individualized support to help children develop communication, social interaction, sensory, behavioural, learning, and functional skills.',
     ],
-    services: ['speech-therapy', 'occupational-therapy', 'behaviour-therapy', 'early-intervention', 'parent-counselling-training'],
+    services: ['speech-therapy', 'occupational-therapy', 'behaviour-therapy', 'early-intervention'],
   },
   {
     slug: 'adhd',
@@ -31,7 +31,7 @@ export const conditions: Condition[] = [
       'ADHD is a neurodevelopmental condition that may affect attention, impulse control, activity levels, organization, and task participation.',
       'Children with ADHD may experience difficulty sitting for activities, following instructions, waiting for their turn, completing tasks, or maintaining attention. Our interventions focus on improving attention, self-regulation, task participation, functional behaviour, and learning skills.',
     ],
-    services: ['behaviour-therapy', 'occupational-therapy', 'special-education', 'parent-counselling-training'],
+    services: ['behaviour-therapy', 'occupational-therapy', 'special-education', 'early-intervention'],
   },
   {
     slug: 'developmental-delay',
@@ -81,7 +81,7 @@ export const conditions: Condition[] = [
       'Some children may experience difficulties with emotional regulation, attention, impulsivity, aggression, communication, social interaction, transitions, or following routines.',
       'Our behavioural support programs aim to understand the underlying needs of the child and encourage positive and functional behaviours through structured activities, positive reinforcement, communication support, and consistent strategies.',
     ],
-    services: ['behaviour-therapy', 'parent-counselling-training', 'occupational-therapy'],
+    services: ['behaviour-therapy', 'early-intervention', 'occupational-therapy'],
   },
   {
     slug: 'learning-disability',

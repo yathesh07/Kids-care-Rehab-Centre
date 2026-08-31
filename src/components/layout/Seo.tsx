@@ -17,7 +17,12 @@ export function Seo({
   noindex?: boolean
   jsonLd?: object
 }) {
-  const fullTitle = title === site.name ? `${site.name} | ${site.tagline}` : `${title} | ${site.name}`
+  const fullTitle =
+    title === site.name
+      ? `${site.name} | ${site.tagline}`
+      : title.includes(site.name)
+        ? title
+        : `${title} | ${site.name}`
   const url = `${site.url}${path}`
 
   return (

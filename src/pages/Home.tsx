@@ -1,5 +1,6 @@
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { Button, Card, cn, Section, SectionHead } from '@/components/ui'
 import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal'
 import { galleryImages } from '@/content/gallery'
@@ -10,6 +11,75 @@ import { site, whatsappUrl } from '@/content/site'
 import { IconCheck } from '@/components/ui/Icons'
 import { branches } from '@/content/branches'
 import { about } from '@/content/about'
+
+const HERO_SLIDES = [
+  {
+    src: '/gallery-photos/therapy-physio-session.jpg',
+    alt: 'A physiotherapist guiding a child through a therapy exercise at Kids Care Rehab Centre',
+  },
+  { src: '/gallery-photos/home-highlight-01.jpg', alt: 'Sensory and movement therapy equipment at Kids Care Rehab Centre' },
+  { src: '/gallery-photos/home-highlight-05.jpg', alt: 'Therapy space at Kids Care Rehab Centre' },
+  { src: '/gallery-photos/home-highlight-09.jpg', alt: 'Therapy equipment and activity corner at Kids Care Rehab Centre' },
+  { src: '/gallery-photos/home-highlight-13.jpg', alt: 'Kids Care Rehab Centre facility' },
+  { src: '/gallery-photos/home-highlight-17.jpg', alt: 'Therapy and activity area at Kids Care Rehab Centre' },
+  { src: '/gallery-photos/home-highlight-21.jpg', alt: 'Kids Care Rehab Centre facility and equipment' },
+  { src: '/gallery-photos/home-highlight-25.jpg', alt: 'Therapy equipment at Kids Care Rehab Centre' },
+  { src: '/gallery-photos/home-highlight-29.jpg', alt: 'Kids Care Rehab Centre facility' },
+  { src: '/gallery-photos/home-highlight-33.jpg', alt: 'Therapy space and equipment at Kids Care Rehab Centre' },
+  { src: '/gallery-photos/home-highlight-37.jpg', alt: 'Kids Care Rehab Centre facility and centre moments' },
+  { src: '/gallery-photos/home-highlight-41.jpg', alt: 'Kids Care Rehab Centre facility' },
+]
+
+function HeroSlider() {
+  const [index, setIndex] = useState(0)
+  const [paused, setPaused] = useState(false)
+
+  useEffect(() => {
+    if (paused) return
+    const timer = window.setInterval(() => {
+      setIndex((i) => (i + 1) % HERO_SLIDES.length)
+    }, 4200)
+    return () => window.clearInterval(timer)
+  }, [paused])
+
+  return (
+    <div
+      className="relative aspect-4/3 overflow-hidden rounded-[1.75rem] border border-brand-200/70 shadow-lift"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      <AnimatePresence mode="sync" initial={false}>
+        <motion.img
+          key={HERO_SLIDES[index].src}
+          src={HERO_SLIDES[index].src}
+          alt={HERO_SLIDES[index].alt}
+          initial={{ opacity: 0, scale: 1.04 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+      </AnimatePresence>
+
+      {/* dot indicators */}
+      <div className="absolute inset-x-0 bottom-3 flex items-center justify-center gap-1.5">
+        {HERO_SLIDES.map((slide, i) => (
+          <button
+            key={slide.src}
+            type="button"
+            aria-label={`Show photo ${i + 1} of ${HERO_SLIDES.length}`}
+            onClick={() => setIndex(i)}
+            className={
+              i === index
+                ? 'h-1.5 w-5 rounded-full bg-white shadow transition-all'
+                : 'h-1.5 w-1.5 rounded-full bg-white/60 transition-all hover:bg-white/85'
+            }
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
 
 export default function Home() {
   return (
@@ -127,13 +197,7 @@ export default function Home() {
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut', delay: 0.3 }}
             />
-            <div className="relative aspect-4/3 overflow-hidden rounded-[1.75rem] border border-brand-200/70 shadow-lift">
-              <img
-                src="/gallery-photos/therapy-physio-session.jpg"
-                alt="A physiotherapist guiding a child through a therapy exercise at Kids Care Rehab Centre"
-                className="h-full w-full object-cover"
-              />
-            </div>
+            <HeroSlider />
           </motion.div>
         </div>
       </div>

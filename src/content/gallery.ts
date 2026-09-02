@@ -603,4 +603,210 @@ export const galleryImages: {
     category: 'events-celebrations',
   },
 
+  {
+    src: '/gallery-photos/home-highlight-01.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-02.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-03.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-04.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-05.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-06.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-07.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-08.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-09.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-10.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-11.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-12.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-13.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-14.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-15.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-16.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-17.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-18.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-19.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-20.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-21.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-22.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-23.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-24.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-25.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-26.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-27.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-28.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-29.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-30.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-31.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-32.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-33.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-34.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-35.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-36.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-37.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-38.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-39.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-40.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+  {
+    src: '/gallery-photos/home-highlight-41.jpg',
+    alt: 'Kids Care Rehab Centre facility, therapy equipment, and centre moments',
+    category: 'latest-equipment',
+  },
+
 ]

@@ -74,8 +74,14 @@ export const site = {
   registrationValidity: 'AY 2025-26 to AY 2027-28',
   pan: 'AABTK7404K',
 
-  /** School registration — number/date not supplied; flag on the School page until confirmed. */
+  /** School registration — client-supplied 2026-09-10. */
   specialSchoolRegistrationBody: 'Commissionerate for the Welfare of Differently Abled, Government of Tamil Nadu',
+  specialSchoolRegistrationName: 'Kids Care Rehab - Special School',
+  specialSchoolRegistrationNumber: '954/2026',
+  specialSchoolRegistrationDate: '05.08.2026',
+
+  /** Google Business Profile review link — client-supplied 2026-09-10. */
+  googleReviewUrl: 'https://g.page/r/CWtXZXWsxUL0EBM/review',
 
   /** Latest public milestone, from KCRC_Website_Content_Edited_Final.docx. */
   latestMilestone: {

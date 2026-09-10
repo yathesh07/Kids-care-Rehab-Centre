@@ -108,13 +108,10 @@ export function KcrSpecialSchoolPage() {
             </p>
             <CheckList items={points} tone="brand" />
 
-            <DraftNote>
-              The exact school registration number and date were not supplied in the source
-              content and must be confirmed by the client before this page states them.
-            </DraftNote>
             <p className="text-sm text-ink-500">
-              Registration: {site.specialSchoolRegistrationBody} — registration number and date
-              to be confirmed.
+              Registered as {site.specialSchoolRegistrationName} — Registration No.{' '}
+              {site.specialSchoolRegistrationNumber}, dated {site.specialSchoolRegistrationDate},
+              with the {site.specialSchoolRegistrationBody}.
             </p>
           </div>
           <aside>
@@ -374,18 +371,18 @@ export function ImpactReviewsPage() {
       <Section tone="white">
         <SectionHead eyebrow="Google Reviews" title="What families tell Google" />
         <DraftNote>
-          The client's requirement is a live Google Reviews widget showing the current star
-          rating and total review count dynamically, with 3–6 recent verified excerpts (reviewer
-          name, date, star rating). This needs the centre's official Google Business Profile
-          link, which has not been supplied yet — placeholder shown below until that link and a
-          reviews API/widget are wired in.
+          The client's fuller requirement is a live-updating widget showing the current star
+          rating, total review count and 3–6 recent verified excerpts pulled automatically from
+          Google — that needs a Google Places/Reviews API integration, which is a separate
+          backend piece not yet built. The links below go straight to the centre's real Google
+          Business Profile in the meantime.
         </DraftNote>
-        <div className="flex flex-col items-center gap-4 rounded-card border border-dashed border-ink-300 bg-paper p-10 text-center">
-          <p className="font-display text-4xl font-bold text-ink-300">★★★★★</p>
-          <p className="text-ink-500">Live Google rating and review count will appear here.</p>
+        <div className="flex flex-col items-center gap-4 rounded-card border border-ink-200 bg-paper p-10 text-center">
+          <p className="font-display text-4xl font-bold text-accent-500">★★★★★</p>
+          <p className="text-ink-500">See what families are saying on our Google Business Profile.</p>
           <div className="flex flex-wrap justify-center gap-3">
-            <Button variant="secondary" disabled>Read all Google reviews</Button>
-            <Button variant="ghost" disabled>Write a Google review</Button>
+            <Button href={site.googleReviewUrl} variant="secondary">Read all Google reviews</Button>
+            <Button href={site.googleReviewUrl} variant="ghost">Write a Google review</Button>
           </div>
           <p className="max-w-[52ch] text-xs text-ink-400">
             Individual progress varies according to each child's needs, attendance and programme.

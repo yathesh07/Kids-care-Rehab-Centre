@@ -62,8 +62,20 @@ export function PageHero({
 }) {
   const paras = Array.isArray(intro) ? intro : intro ? [intro] : []
   return (
-    <div className="border-b border-ink-200/70 bg-linear-to-b from-brand-50 to-paper">
-      <div className="container-page py-10 sm:py-14">
+    <div className="relative overflow-hidden border-b border-ink-200/70 bg-linear-to-br from-brand-50 via-paper to-accent-50">
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-10 right-[8%] h-40 w-40 rounded-full bg-coral-300/25 blur-3xl"
+      />
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-16 left-[4%] h-44 w-44 rounded-full bg-sky-300/25 blur-3xl"
+      />
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute right-[28%] top-1/2 h-24 w-24 -translate-y-1/2 rounded-full bg-accent-300/30 blur-2xl"
+      />
+      <div className="container-page relative py-10 sm:py-14">
         {trail && <Breadcrumbs trail={trail} />}
         <Reveal y={16}>
           {eyebrow && (

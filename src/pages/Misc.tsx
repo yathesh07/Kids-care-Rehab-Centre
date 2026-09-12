@@ -278,6 +278,23 @@ export function GalleryPage() {
         intro="A look at therapy sessions, outreach visits and centre events — real moments from Kids Care Rehab Centre, shared with families' consent."
         trail={[{ label: 'Gallery' }]}
       />
+
+      <Section tone="white">
+        <SectionHead eyebrow="Watch" title="Our story, in under 3 minutes" />
+        <div className="mx-auto max-w-3xl overflow-hidden rounded-card border border-brand-200/70 shadow-lift">
+          <video
+            controls
+            preload="none"
+            poster="/video/kcrc-intro-poster.jpg"
+            className="aspect-video w-full bg-ink-900"
+          >
+            <source src="/video/kcrc-intro.mp4" type="video/mp4" />
+            Your browser does not support embedded video. You can{' '}
+            <a href="/video/kcrc-intro.mp4">download the video</a> instead.
+          </video>
+        </div>
+      </Section>
+
       <Section tone="paper">
         <DraftNote>
           Photos are currently grouped under the categories they were tagged with at upload.

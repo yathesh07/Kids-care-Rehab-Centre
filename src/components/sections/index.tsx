@@ -214,6 +214,40 @@ export function ConditionGrid({ limit }: { limit?: number }) {
   )
 }
 
+/* -------------------------------------------------------- PhotoStrip */
+/**
+ * A row of 2-3 real centre photos, for breaking up long text-only pages.
+ * Pass `photos` from `pagePhotos(seed, count)` in @/content/gallery.
+ */
+export function PhotoStrip({
+  photos,
+  className,
+}: {
+  photos: { src: string; alt: string }[]
+  className?: string
+}) {
+  if (photos.length === 0) return null
+  return (
+    <RevealGroup className={cn('grid gap-4 sm:grid-cols-3', className)} stagger={0.08}>
+      {photos.map((p) => (
+        <RevealItem key={p.src} className="aspect-4/3 overflow-hidden rounded-card border border-ink-200 shadow-soft">
+          <img src={p.src} alt={p.alt} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 hover:scale-105" />
+        </RevealItem>
+      ))}
+    </RevealGroup>
+  )
+}
+
+/* --------------------------------------------------------- SidePhoto */
+/** A single tall photo for a sidebar/aside column next to text. */
+export function SidePhoto({ src, alt, className }: { src: string; alt: string; className?: string }) {
+  return (
+    <div className={cn('aspect-4/5 overflow-hidden rounded-card border border-ink-200 shadow-soft', className)}>
+      <img src={src} alt={alt} loading="lazy" className="h-full w-full object-cover" />
+    </div>
+  )
+}
+
 /* ----------------------------------------------------------- CTABand */
 export function CTABand({
   title = 'Concerned about your child’s development?',

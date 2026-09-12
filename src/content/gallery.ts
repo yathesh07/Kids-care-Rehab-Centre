@@ -123,11 +123,6 @@ export const galleryImages: {
     category: 'events-celebrations',
   },
   {
-    src: '/gallery-photos/moment-008.jpg',
-    alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
-    category: 'events-celebrations',
-  },
-  {
     src: '/gallery-photos/moment-009.jpg',
     alt: 'Photo from a Kids Care Rehab Centre programme, outreach visit, or centre event',
     category: 'events-celebrations',
@@ -810,3 +805,20 @@ export const galleryImages: {
   },
 
 ]
+
+
+/**
+ * Deterministic photo picks for decorating text-heavy pages that have no
+ * dedicated photography yet (most categories besides latest-equipment and
+ * events-celebrations are still empty — see counts above). Spreads picks
+ * across the full gallery pool so pages don't all show the same photos.
+ */
+export function pagePhotos(seed: number, count = 3) {
+  const pool = galleryImages
+  const start = (seed * 7) % pool.length
+  const out: typeof pool = []
+  for (let i = 0; i < count; i++) {
+    out.push(pool[(start + i * 13) % pool.length])
+  }
+  return out
+}

@@ -1,9 +1,10 @@
 import { Navigate, useParams } from 'react-router-dom'
 import { Button, Card, Section } from '@/components/ui'
-import { CTABand, CheckList, CallCard, PageHero, ServiceGrid } from '@/components/sections'
+import { CTABand, CheckList, CallCard, PageHero, PhotoStrip, ServiceGrid, SidePhoto } from '@/components/sections'
 import { Seo } from '@/components/layout/Seo'
 import { IconArrow, ServiceIcon } from '@/components/ui/Icons'
 import { getService, services, servicesIntro } from '@/content/services'
+import { pagePhotos } from '@/content/gallery'
 import { getCondition } from '@/content/conditions'
 
 /* ------------------------------------------------------- hub page */
@@ -40,6 +41,10 @@ export function ServicesPage() {
         </div>
       </Section>
 
+      <Section tone="paper">
+        <PhotoStrip photos={pagePhotos(0, 3)} />
+      </Section>
+
       <CTABand />
     </>
   )
@@ -55,6 +60,7 @@ export function ServiceDetailPage() {
   const related = service.conditions
     .map((c) => getCondition(c))
     .filter((c): c is NonNullable<typeof c> => Boolean(c))
+  const sidePhoto = pagePhotos(services.findIndex((s) => s.slug === service.slug) + 1, 1)[0]
 
   return (
     <>
@@ -94,6 +100,7 @@ export function ServiceDetailPage() {
           </div>
 
           <aside className="flex flex-col gap-6">
+            <SidePhoto src={sidePhoto.src} alt={sidePhoto.alt} />
             <CallCard />
 
             <div className="rounded-card border border-ink-200 bg-white p-6">

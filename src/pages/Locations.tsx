@@ -1,9 +1,10 @@
 import { Navigate, useParams } from 'react-router-dom'
 import { Button, Card, Section } from '@/components/ui'
-import { CTABand, PageHero } from '@/components/sections'
+import { CTABand, PageHero, PhotoStrip } from '@/components/sections'
 import { Seo } from '@/components/layout/Seo'
 import { IconClock, IconMail, IconPhone, IconPin } from '@/components/ui/Icons'
 import { branches, getBranch } from '@/content/branches'
+import { pagePhotos } from '@/content/gallery'
 import { site, whatsappUrl } from '@/content/site'
 
 export function LocationsPage() {
@@ -83,6 +84,10 @@ export function LocationsPage() {
             </Card>
           ))}
         </div>
+      </Section>
+
+      <Section tone="white">
+        <PhotoStrip photos={pagePhotos(150, 3)} />
       </Section>
 
       <CTABand />

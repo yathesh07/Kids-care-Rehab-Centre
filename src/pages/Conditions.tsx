@@ -1,6 +1,6 @@
 import { Navigate, useParams } from 'react-router-dom'
 import { Card, Section } from '@/components/ui'
-import { CTABand, CallCard, ConditionGrid, PageHero } from '@/components/sections'
+import { CTABand, CallCard, ConditionGrid, PageHero, PhotoStrip, SidePhoto } from '@/components/sections'
 import { Seo } from '@/components/layout/Seo'
 import { IconArrow, ServiceIcon } from '@/components/ui/Icons'
 import {
@@ -10,6 +10,7 @@ import {
   getCondition,
 } from '@/content/conditions'
 import { getService } from '@/content/services'
+import { pagePhotos } from '@/content/gallery'
 
 /* ------------------------------------------------------- hub page */
 export function ConditionsPage() {
@@ -43,6 +44,10 @@ export function ConditionsPage() {
         </div>
       </Section>
 
+      <Section tone="paper">
+        <PhotoStrip photos={pagePhotos(3, 3)} />
+      </Section>
+
       <CTABand />
     </>
   )
@@ -58,6 +63,7 @@ export function ConditionDetailPage() {
   const related = condition.services
     .map((s) => getService(s))
     .filter((s): s is NonNullable<typeof s> => Boolean(s))
+  const sidePhoto = pagePhotos(conditions.findIndex((c) => c.slug === condition.slug) + 20, 1)[0]
 
   return (
     <>
@@ -113,6 +119,7 @@ export function ConditionDetailPage() {
           </div>
 
           <aside className="flex flex-col gap-6">
+            <SidePhoto src={sidePhoto.src} alt={sidePhoto.alt} />
             <CallCard />
 
             <div className="rounded-card border border-ink-200 bg-white p-6">

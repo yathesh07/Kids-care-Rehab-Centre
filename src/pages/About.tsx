@@ -1,11 +1,13 @@
 import { Section, SectionHead } from '@/components/ui'
-import { CTABand, CheckList, PageHero } from '@/components/sections'
+import { CTABand, CheckList, PageHero, PhotoStrip, SidePhoto } from '@/components/sections'
 import { Seo } from '@/components/layout/Seo'
 import { about, journey } from '@/content/about'
+import { pagePhotos } from '@/content/gallery'
 import { Button } from '@/components/ui'
 import { site } from '@/content/site'
 
 export default function About() {
+  const directorPhoto = pagePhotos(60, 1)[0]
   return (
     <>
       <Seo
@@ -108,6 +110,11 @@ export default function About() {
         </ol>
       </Section>
 
+      {/* --------------------------------------------------- moments */}
+      <Section tone="white">
+        <PhotoStrip photos={pagePhotos(50, 3)} />
+      </Section>
+
       {/* --------------------------------------------------- journey */}
       <Section tone="white" id="journey">
         <SectionHead eyebrow="Our journey" title="20 years of dedicated service, learning and inclusion" />
@@ -144,6 +151,7 @@ export default function About() {
             <Button to="/about/founder" variant="secondary" size="sm" className="mt-5">
               Full profile
             </Button>
+            <SidePhoto src={directorPhoto.src} alt={directorPhoto.alt} className="mt-6" />
           </div>
           <div>
             <div className="flex flex-col gap-4">

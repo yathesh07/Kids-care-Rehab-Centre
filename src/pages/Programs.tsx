@@ -1,9 +1,10 @@
 import { Navigate, useParams } from 'react-router-dom'
 import { Button, Card, Section } from '@/components/ui'
-import { CTABand, CallCard, CheckList, PageHero } from '@/components/sections'
+import { CTABand, CallCard, CheckList, PageHero, PhotoStrip, SidePhoto } from '@/components/sections'
 import { Seo } from '@/components/layout/Seo'
 import { IconArrow } from '@/components/ui/Icons'
 import { getProgram, programs } from '@/content/programs'
+import { pagePhotos } from '@/content/gallery'
 
 export function ProgramsPage() {
   return (
@@ -33,6 +34,9 @@ export function ProgramsPage() {
           ))}
         </div>
       </Section>
+      <Section tone="white">
+        <PhotoStrip photos={pagePhotos(6, 3)} />
+      </Section>
       <CTABand />
     </>
   )
@@ -42,6 +46,8 @@ export function ProgramDetailPage() {
   const { slug } = useParams()
   const program = slug ? getProgram(slug) : undefined
   if (!program) return <Navigate to="/programs" replace />
+
+  const sidePhoto = pagePhotos(programs.findIndex((p) => p.slug === program.slug) + 40, 1)[0]
 
   return (
     <>
@@ -96,6 +102,7 @@ export function ProgramDetailPage() {
           </div>
 
           <aside className="flex flex-col gap-6">
+            <SidePhoto src={sidePhoto.src} alt={sidePhoto.alt} />
             <CallCard />
             <div className="rounded-card border border-ink-200 bg-white p-6">
               <h3 className="mb-3 text-base">Other programs</h3>

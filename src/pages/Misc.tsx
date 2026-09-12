@@ -1,17 +1,18 @@
 import { Button, Card, cn, DraftNote, Section, SectionHead } from '@/components/ui'
-import { CTABand, CallCard, CheckList, PageHero } from '@/components/sections'
+import { CTABand, CallCard, CheckList, PageHero, PhotoStrip, SidePhoto } from '@/components/sections'
 import { Seo } from '@/components/layout/Seo'
 import { RevealGroup, RevealItem } from '@/components/motion/Reveal'
 import { IconArrow } from '@/components/ui/Icons'
 import { adultPhysio, books } from '@/content/about'
 import { IconCheck } from '@/components/ui/Icons'
 import { faqs, testimonials } from '@/content/placeholders'
-import { galleryCategoryLabels, galleryImages, type GalleryCategory } from '@/content/gallery'
+import { galleryCategoryLabels, galleryImages, pagePhotos, type GalleryCategory } from '@/content/gallery'
 import { useMemo, useState } from 'react'
 import { site } from '@/content/site'
 
 /* ------------------------------------------------ Adult Physio Care */
 export function AdultPhysioPage() {
+  const adultPhysioPhoto = pagePhotos(80, 1)[0]
   return (
     <>
       <Seo
@@ -68,7 +69,8 @@ export function AdultPhysioPage() {
             <p className="mt-5 max-w-[68ch] text-ink-600">{adultPhysio.prenatal.postnatal}</p>
           </div>
 
-          <aside>
+          <aside className="flex flex-col gap-6">
+            <SidePhoto {...adultPhysioPhoto} />
             <CallCard />
           </aside>
         </div>
@@ -446,6 +448,10 @@ export function TrustPage() {
             <Button to="/compliance" variant="secondary">Compliance &amp; Reports</Button>
           </div>
         </div>
+      </Section>
+
+      <Section tone="paper">
+        <PhotoStrip photos={pagePhotos(90, 3)} />
       </Section>
 
       <CTABand />

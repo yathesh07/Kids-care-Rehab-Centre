@@ -5,12 +5,13 @@
  * Grouped in one file to keep the new-route surface easy to review together.
  */
 import { Button, Card, DraftNote, Section, SectionHead } from '@/components/ui'
-import { CTABand, CallCard, CheckList, PageHero } from '@/components/sections'
+import { CTABand, CallCard, CheckList, PageHero, PhotoStrip, SidePhoto } from '@/components/sections'
 import { Seo } from '@/components/layout/Seo'
 import { RevealGroup, RevealItem } from '@/components/motion/Reveal'
 import { IconCheck } from '@/components/ui/Icons'
 import { site, whatsappUrl } from '@/content/site'
 import { about } from '@/content/about'
+import { galleryImages, pagePhotos } from '@/content/gallery'
 
 /* ============================================================ Founder */
 export function FounderPage() {
@@ -51,7 +52,8 @@ export function FounderPage() {
               the <a href="/books" className="text-brand-600 underline">Books &amp; Resources</a> page.
             </p>
           </div>
-          <aside>
+          <aside className="flex flex-col gap-6">
+            <SidePhoto {...pagePhotos(100, 1)[0]} />
             <CallCard />
           </aside>
         </div>
@@ -114,7 +116,8 @@ export function KcrSpecialSchoolPage() {
               with the {site.specialSchoolRegistrationBody}.
             </p>
           </div>
-          <aside>
+          <aside className="flex flex-col gap-6">
+            <SidePhoto {...pagePhotos(110, 1)[0]} />
             <CallCard />
           </aside>
         </div>
@@ -174,6 +177,10 @@ export function CdecPage() {
             </Card>
           ))}
         </div>
+      </Section>
+
+      <Section tone="paper">
+        <PhotoStrip photos={pagePhotos(120, 3)} />
       </Section>
 
       <Section tone="white">
@@ -276,6 +283,10 @@ export function AssessmentPage() {
         </div>
       </Section>
 
+      <Section tone="paper">
+        <PhotoStrip photos={pagePhotos(130, 3)} />
+      </Section>
+
       <CTABand title="Book a child assessment" body="No referral is needed. Call or WhatsApp us to arrange an assessment for your child." />
     </>
   )
@@ -332,6 +343,10 @@ export function SuccessStoriesPage() {
             </RevealItem>
           ))}
         </RevealGroup>
+      </Section>
+
+      <Section tone="white">
+        <PhotoStrip photos={galleryImages.filter((g) => g.category === 'latest-equipment').slice(4, 7)} />
       </Section>
 
       <CTABand />
@@ -433,7 +448,8 @@ export function DonatePage() {
               <Button to="/contact" variant="secondary">Donate equipment</Button>
             </div>
           </div>
-          <aside>
+          <aside className="flex flex-col gap-6">
+            <SidePhoto {...pagePhotos(140, 1)[0]} />
             <DraftNote>
               Bank / payment details for donations were not supplied in the source content and
               must be added — and verified — by the client before this page can accept direct
@@ -508,6 +524,10 @@ export function CsrPage() {
             <span key={p} className="rounded-full border border-ink-200 bg-white px-4 py-2 text-sm text-ink-700">{p}</span>
           ))}
         </div>
+      </Section>
+
+      <Section tone="paper">
+        <PhotoStrip photos={pagePhotos(145, 3)} />
       </Section>
 
       <CTABand title="Discuss a CSR project" body="Project proposals can include clear budgets, milestones, utilisation reporting and impact updates." />

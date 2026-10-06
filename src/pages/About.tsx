@@ -7,7 +7,10 @@ import { Button } from '@/components/ui'
 import { site } from '@/content/site'
 
 export default function About() {
-  const directorPhoto = pagePhotos(60, 1)[0]
+  const directorPhoto = {
+    src: '/founder-radha-balachandar.jpg',
+    alt: 'Dr. R. Radha Balachandar, Founder of Kids Care Rehab Centre, with her Seva Rathna award',
+  }
   return (
     <>
       <Seo

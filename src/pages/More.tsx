@@ -53,7 +53,10 @@ export function FounderPage() {
             </p>
           </div>
           <aside className="flex flex-col gap-6">
-            <SidePhoto {...pagePhotos(100, 1)[0]} />
+            <SidePhoto
+              src="/founder-radha-balachandar.jpg"
+              alt="Dr. R. Radha Balachandar, Founder of Kids Care Rehab Centre, with her Seva Rathna award"
+            />
             <CallCard />
           </aside>
         </div>

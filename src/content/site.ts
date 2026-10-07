@@ -76,6 +76,9 @@ export const site = {
 
   /** School registration — client-supplied 2026-09-10. */
   specialSchoolRegistrationBody: 'Commissionerate for the Welfare of Differently Abled, Government of Tamil Nadu',
+  // Google Form for KCR Special School admissions — set the client's form URL here
+  admissionFormUrl:
+    'https://docs.google.com/forms/d/e/1FAIpQLSeKvDYfIOtcZDJyQ8f8SYMdKwzU0fTAUbg5Th4VhkXFKPHtLw/viewform?usp=header',
   specialSchoolRegistrationName: 'Kids Care Rehab - Special School',
   specialSchoolRegistrationNumber: '954/2026',
   specialSchoolRegistrationDate: '05.08.2026',

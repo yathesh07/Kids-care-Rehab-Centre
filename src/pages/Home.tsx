@@ -82,6 +82,7 @@ function HeroSlider() {
 }
 
 export default function Home() {
+  const admissionUrl = site.admissionFormUrl || '/contact'
   return (
     <>
       <Seo
@@ -99,70 +100,42 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            <span className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-white px-3.5 py-1.5 font-display text-xs font-semibold text-brand-600">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent-500" />
-              Serving Chennai since {site.foundedText}
+            <span className="inline-flex items-center gap-2.5 rounded-full bg-accent-500 px-4 py-2 font-display text-sm font-bold tracking-wide text-white uppercase shadow-soft">
+              <span className="h-2 w-2 animate-pulse rounded-full bg-white" />
+              Admissions Open – 2026–27
             </span>
 
-            <h1 className="mt-5 text-4xl leading-[1.1] sm:text-5xl lg:text-[3.4rem]">
-              Every child has potential.
-              <span className="block text-brand-600">We help them discover it.</span>
+            <h1 className="mt-5 text-4xl leading-[1.08] uppercase sm:text-5xl lg:text-[3.4rem]">
+              KCR Special School
+              <span className="mt-2 block text-2xl font-semibold text-brand-600 normal-case sm:text-3xl">
+                Kids Care Rehab Centre
+              </span>
             </h1>
 
-            <p className="mt-5 max-w-[54ch] text-lg text-ink-600">
-              Four divisions, one mission — helping every child and family we work with reach
-              their full potential.
+            <p className="mt-4 inline-flex items-center gap-2 rounded-xl border border-teal-200 bg-teal-50 px-3.5 py-2 font-display text-sm font-semibold text-teal-700">
+              <IconCheck className="h-4 w-4" />
+              Recognised by Government of Tamil Nadu – Reg. No. {site.specialSchoolRegistrationNumber}
             </p>
 
-            <RevealGroup className="mt-5 grid grid-cols-2 gap-2.5 sm:max-w-[26rem]" stagger={0.06}>
-              {[
-                { name: 'KCRC', desc: 'Therapy & rehabilitation', to: '/services', border: 'border-brand-200', bg: 'bg-brand-50', hoverBorder: 'hover:border-brand-300', hoverBg: 'hover:bg-brand-100', text: 'text-brand-700' },
-                { name: 'Special School', desc: 'Special education', border: 'border-teal-200', bg: 'bg-teal-50', hoverBorder: 'hover:border-teal-300', hoverBg: 'hover:bg-teal-100', text: 'text-teal-700' },
-                { name: 'BRAIN2ACT', desc: "Director's movement program", to: '/programs/brain2act', border: 'border-coral-200', bg: 'bg-coral-50', hoverBorder: 'hover:border-coral-300', hoverBg: 'hover:bg-coral-100', text: 'text-coral-700' },
-                { name: 'CDEC', desc: 'Vocational training centre', border: 'border-sky-200', bg: 'bg-sky-50', hoverBorder: 'hover:border-sky-300', hoverBg: 'hover:bg-sky-100', text: 'text-sky-700' },
-              ].map((d) => {
-                const inner = (
-                  <>
-                    <span className={cn('font-display text-sm font-bold', d.text)}>{d.name}</span>
-                    <span className="text-xs text-ink-500">{d.desc}</span>
-                  </>
-                )
-                const cls = cn('flex flex-col rounded-xl border px-3.5 py-2.5 transition-colors', d.border, d.bg)
-                return (
-                  <RevealItem key={d.name}>
-                    {d.to ? (
-                      <Link to={d.to} className={cn(cls, d.hoverBorder, d.hoverBg)}>
-                        {inner}
-                      </Link>
-                    ) : (
-                      <div className={cls}>{inner}</div>
-                    )}
-                  </RevealItem>
-                )
-              })}
-            </RevealGroup>
+            <p className="mt-5 max-w-[54ch] text-lg text-ink-600">
+              Pre-primary and primary special education for children who need individualized
+              learning and developmental support — backed by therapists, in Chennai.
+            </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <Button to="/contact">Book an appointment</Button>
-              <Button to="/services" variant="secondary">
-                Explore our services
+              <Button href={admissionUrl}>
+                Apply for Admission
+              </Button>
+              <Button href={whatsappUrl} variant="secondary">
+                WhatsApp Us
+              </Button>
+              <Button href={site.phoneHref} variant="secondary">
+                Call Us
               </Button>
             </div>
 
             <p className="mt-5 text-sm text-ink-500">
-              No referral needed ·{' '}
-              <a href={site.phoneHref} className="font-medium text-brand-600 hover:underline">
-                {site.phoneDisplay}
-              </a>{' '}
-              ·{' '}
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium text-brand-600 hover:underline"
-              >
-                WhatsApp
-              </a>
+              {site.phoneDisplay} · Royapettah &amp; Madipakkam, Chennai
             </p>
           </motion.div>
 

@@ -11,6 +11,7 @@ import { RevealGroup, RevealItem } from '@/components/motion/Reveal'
 import { IconCheck } from '@/components/ui/Icons'
 import { site, whatsappUrl } from '@/content/site'
 import { about } from '@/content/about'
+import { MinisterVisit } from '@/components/sections/MinisterVisit'
 import { galleryImages, pagePhotos } from '@/content/gallery'
 
 /* ============================================================ Founder */
@@ -126,6 +127,7 @@ export function KcrSpecialSchoolPage() {
         </div>
       </Section>
 
+      <MinisterVisit />
       <CTABand title="Enquire about KCR Special School admission" body="Pre-primary and primary seats for 2026–27 are open. Call or WhatsApp to arrange a visit and assessment." />
     </>
   )

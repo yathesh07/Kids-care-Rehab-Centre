@@ -11,6 +11,7 @@ import { site, whatsappUrl } from '@/content/site'
 import { IconCheck } from '@/components/ui/Icons'
 import { branches } from '@/content/branches'
 import { about } from '@/content/about'
+import { MinisterVisit } from '@/components/sections/MinisterVisit'
 
 const HERO_SLIDES = [
   {
@@ -176,6 +177,7 @@ export default function Home() {
       </div>
 
       <StatStrip />
+      <MinisterVisit />
 
       {/* --------------------------------------------------------- about */}
       <Section tone="paper" className="pt-16 sm:pt-24">

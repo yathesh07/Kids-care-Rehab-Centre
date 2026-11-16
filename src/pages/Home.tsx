@@ -6,29 +6,24 @@ import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal'
 import { galleryImages } from '@/content/gallery'
 import { CTABand, ConditionGrid, ServiceGrid, StatStrip } from '@/components/sections'
 import { Seo, organisationSchema } from '@/components/layout/Seo'
-import { IconArrow, IconClock, IconPhone, IconPin } from '@/components/ui/Icons'
+import { IconArrow, IconPhone } from '@/components/ui/Icons'
 import { site, whatsappUrl } from '@/content/site'
 import { IconCheck } from '@/components/ui/Icons'
-import { branches } from '@/content/branches'
-import { about } from '@/content/about'
-import { MinisterVisit } from '@/components/sections/MinisterVisit'
+import {
+  AdmissionsSection,
+  EventsGallery,
+  GovRecognition,
+  SchoolAbout,
+  SchoolContact,
+  SchoolServices,
+} from '@/components/sections/School'
 
 const HERO_SLIDES = [
-  {
-    src: '/gallery-photos/therapy-physio-session.jpg',
-    alt: 'A physiotherapist guiding a child through a therapy exercise at Kids Care Rehab Centre',
-  },
-  { src: '/gallery-photos/home-highlight-01.jpg', alt: 'Sensory and movement therapy equipment at Kids Care Rehab Centre' },
-  { src: '/gallery-photos/home-highlight-05.jpg', alt: 'Therapy space at Kids Care Rehab Centre' },
-  { src: '/gallery-photos/home-highlight-09.jpg', alt: 'Therapy equipment and activity corner at Kids Care Rehab Centre' },
-  { src: '/gallery-photos/home-highlight-13.jpg', alt: 'Kids Care Rehab Centre facility' },
-  { src: '/gallery-photos/home-highlight-17.jpg', alt: 'Therapy and activity area at Kids Care Rehab Centre' },
-  { src: '/gallery-photos/home-highlight-21.jpg', alt: 'Kids Care Rehab Centre facility and equipment' },
-  { src: '/gallery-photos/home-highlight-25.jpg', alt: 'Therapy equipment at Kids Care Rehab Centre' },
-  { src: '/gallery-photos/home-highlight-29.jpg', alt: 'Kids Care Rehab Centre facility' },
-  { src: '/gallery-photos/home-highlight-33.jpg', alt: 'Therapy space and equipment at Kids Care Rehab Centre' },
-  { src: '/gallery-photos/home-highlight-37.jpg', alt: 'Kids Care Rehab Centre facility and centre moments' },
-  { src: '/gallery-photos/home-highlight-41.jpg', alt: 'Kids Care Rehab Centre facility' },
+  { src: '/gallery-photos/minister-visit-01.jpg', alt: 'Students, special educators and therapists of KCR Special School, Royapettah' },
+  { src: '/gallery-photos/moment-006.jpg', alt: 'A special educator guiding a child through a learning activity at KCR Special School' },
+  { src: '/gallery-photos/diwali-01.jpg', alt: 'Families and staff at the Diwali celebration, KCR Special School' },
+  { src: '/gallery-photos/therapy-physio-session.jpg', alt: 'A therapist guiding a child through a therapy exercise' },
+  { src: '/gallery-photos/home-highlight-05.jpg', alt: 'Learning and therapy space at KCR Special School' },
 ]
 
 function HeroSlider() {
@@ -87,8 +82,8 @@ export default function Home() {
   return (
     <>
       <Seo
-        title="Kids Care Rehab Centre Chennai | Therapy & Special School"
-        description={site.description}
+        title="KCR Special School Chennai | Government Recognised Special School in Royapettah"
+        description="KCR Special School, Royapettah — Government of Tamil Nadu recognised special school (Reg. No. 954/2026). Admissions open 2026–27: special education, IEP, early intervention and therapy in Chennai."
         path="/"
         jsonLd={organisationSchema}
       />
@@ -118,25 +113,26 @@ export default function Home() {
               Recognised by Government of Tamil Nadu – Reg. No. {site.specialSchoolRegistrationNumber}
             </p>
 
-            <p className="mt-5 max-w-[54ch] text-lg text-ink-600">
-              Pre-primary and primary special education for children who need individualized
-              learning and developmental support — backed by therapists, in Chennai.
+            <p className="mt-5 max-w-[48ch] text-lg text-ink-600">
+              Special education, early intervention and therapy for children — Royapettah, Chennai.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <Button href={admissionUrl}>
+              <Button href={admissionUrl} variant="accent" className="w-full sm:w-auto">
                 Apply for Admission
+                <IconArrow className="h-4 w-4" />
               </Button>
-              <Button href={whatsappUrl} variant="secondary">
+              <Button href={whatsappUrl} variant="secondary" className="flex-1 sm:flex-none">
                 WhatsApp Us
               </Button>
-              <Button href={site.phoneHref} variant="secondary">
+              <Button href={site.phoneHref} variant="secondary" className="flex-1 sm:flex-none">
+                <IconPhone className="h-4 w-4" />
                 Call Us
               </Button>
             </div>
 
             <p className="mt-5 text-sm text-ink-500">
-              {site.phoneDisplay} · Royapettah &amp; Madipakkam, Chennai
+              {site.phoneDisplay} · {site.mobileDisplay} · Royapettah, Chennai
             </p>
           </motion.div>
 
@@ -177,39 +173,11 @@ export default function Home() {
       </div>
 
       <StatStrip />
-      <MinisterVisit />
-
-      {/* --------------------------------------------------------- about */}
-      <Section tone="paper" className="pt-16 sm:pt-24">
-        <Reveal className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-          <div>
-            <span className="font-display text-xs font-semibold tracking-[0.14em] text-brand-500 uppercase">
-              About us
-            </span>
-            <h2 className="mt-2 text-3xl sm:text-4xl">
-              Where every child gets the right care
-            </h2>
-          </div>
-          <div className="flex flex-col gap-4">
-            <p className="text-lg text-ink-600">{about.intro[0]}</p>
-            <p className="text-ink-600">{about.approach.after[1]}</p>
-            <div className="mt-2 flex flex-wrap gap-2">
-              {about.approach.team.map((t) => (
-                <span
-                  key={t}
-                  className="rounded-full border border-ink-200 bg-white px-3.5 py-1.5 text-sm text-ink-700"
-                >
-                  {t}
-                </span>
-              ))}
-            </div>
-            <Button to="/about" variant="ghost" className="mt-3 w-fit px-0 hover:bg-transparent">
-              Read more about us
-              <IconArrow className="h-4 w-4" />
-            </Button>
-          </div>
-        </Reveal>
-      </Section>
+      <GovRecognition />
+      <AdmissionsSection />
+      <EventsGallery />
+      <SchoolAbout />
+      <SchoolServices />
 
       {/* ---------------------------------------------- four ways to connect */}
       <Section tone="paper">
@@ -282,8 +250,8 @@ export default function Home() {
       {/* ------------------------------------------------------ services */}
       <Section tone="white">
         <SectionHead
-          eyebrow="Our services"
-          title="Comprehensive therapy, tailored to your child"
+          eyebrow="Kids Care Rehab Centre"
+          title="All our therapy services"
           intro="Twelve specialised therapies working together under one roof, with a single individualized plan for each child and adult."
         />
         <ServiceGrid />
@@ -378,68 +346,6 @@ export default function Home() {
               <p className="flex-1 text-[0.95rem] text-ink-600">{site.wheelchairAccess}</p>
             </div>
           </RevealItem>
-        </RevealGroup>
-      </Section>
-
-      {/* ------------------------------------------------------ branches */}
-      <Section tone="paper">
-        <SectionHead
-          eyebrow="Visit us"
-          title="Two centres in Chennai"
-          intro="Both centres offer our full range of children’s therapy services."
-        />
-        <RevealGroup className="grid gap-5 sm:grid-cols-2" stagger={0.1}>
-          {branches.map((b) => (
-            <RevealItem key={b.slug}>
-            <Card interactive={false} className="gap-4">
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <h3 className="text-xl">{b.name}</h3>
-                  {b.isMain && (
-                    <span className="mt-1 inline-block rounded-full bg-brand-100 px-2.5 py-0.5 text-xs font-semibold text-brand-700">
-                      Main centre
-                    </span>
-                  )}
-                </div>
-                <IconPin className="h-6 w-6 shrink-0 text-accent-500" />
-              </div>
-
-              <address className="not-italic text-[0.95rem] text-ink-600">
-                {b.addressLines.map((l) => (
-                  <span key={l} className="block">
-                    {l}
-                  </span>
-                ))}
-                <span className="block">
-                  {b.city} {b.pincode}
-                </span>
-              </address>
-
-              <div className="flex flex-col gap-2 text-sm text-ink-600">
-                <a
-                  href={b.phoneHref}
-                  className="inline-flex items-center gap-2 hover:text-brand-600"
-                >
-                  <IconPhone className="h-4 w-4 text-brand-500" />
-                  {b.phoneDisplay}
-                </a>
-                <span className="inline-flex items-center gap-2">
-                  <IconClock className="h-4 w-4 text-brand-500" />
-                  {b.hours}
-                </span>
-              </div>
-
-              <div className="mt-auto flex flex-wrap gap-2 pt-2">
-                <Button to={`/locations/${b.slug}`} size="sm" variant="secondary">
-                  Branch details
-                </Button>
-                <Button href={b.mapsUrl} size="sm" variant="ghost">
-                  Get directions
-                </Button>
-              </div>
-            </Card>
-            </RevealItem>
-          ))}
         </RevealGroup>
       </Section>
 
@@ -539,6 +445,7 @@ export default function Home() {
         </div>
       </Section>
 
+      <SchoolContact />
       <CTABand />
     </>
   )

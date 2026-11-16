@@ -82,6 +82,16 @@ export const site = {
   specialSchoolRegistrationName: 'Kids Care Rehab - Special School',
   specialSchoolRegistrationNumber: '954/2026',
   specialSchoolRegistrationDate: '05.08.2026',
+  /** Path to the recognition certificate image/PDF in /public once the client supplies it. */
+  recognitionCertificate: '/documents/kcr-registration-certificate.pdf' as string,
+  recognitionCertificateImage: '/documents/kcr-registration-certificate.jpg',
+  specialSchoolRegistrationValidTill: '05.01.2029',
+
+  /** Event details for the Events & Special Moments gallery. */
+  events: {
+    /** Date of the Finance Minister's visit — awaiting client confirmation. */
+    ministerVisitDate: '' as string,
+  },
 
   /** Google Business Profile review link — client-supplied 2026-09-10. */
   googleReviewUrl: 'https://g.page/r/CWtXZXWsxUL0EBM/review',

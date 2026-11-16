@@ -1,6 +1,6 @@
 import { site, whatsappUrl } from '@/content/site'
 import { branches } from '@/content/branches'
-import { IconPhone, IconPin, IconWhatsApp } from '@/components/ui/Icons'
+import { IconCheck, IconPhone, IconPin, IconWhatsApp } from '@/components/ui/Icons'
 
 /**
  * Fixed bottom bar on small screens — Call, WhatsApp, Directions.
@@ -27,6 +27,15 @@ export function MobileActionBar() {
         >
           <IconWhatsApp className="h-5 w-5 text-[#25D366]" />
           WhatsApp
+        </a>
+        <a
+          href={site.admissionFormUrl || '/contact'}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${item} border-r border-ink-200 bg-accent-500 font-semibold text-white active:bg-accent-600`}
+        >
+          <IconCheck className="h-5 w-5" />
+          Apply
         </a>
         <a
           href={main.mapsUrl}

@@ -9,6 +9,7 @@ import { faqs, testimonials } from '@/content/placeholders'
 import { galleryCategoryLabels, galleryImages, pagePhotos, type GalleryCategory } from '@/content/gallery'
 import { useMemo, useState } from 'react'
 import { site } from '@/content/site'
+import { EventsGallery } from '@/components/sections/School'
 
 /* ------------------------------------------------ Adult Physio Care */
 export function AdultPhysioPage() {
@@ -281,7 +282,9 @@ export function GalleryPage() {
         trail={[{ label: 'Gallery' }]}
       />
 
-      <Section tone="white">
+      <EventsGallery />
+
+      <Section tone="paper">
         <SectionHead eyebrow="Watch" title="Our story, in under 3 minutes" />
         <div className="mx-auto max-w-3xl overflow-hidden rounded-card border border-brand-200/70 shadow-lift">
           <video

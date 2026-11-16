@@ -11,7 +11,7 @@ import { RevealGroup, RevealItem } from '@/components/motion/Reveal'
 import { IconCheck } from '@/components/ui/Icons'
 import { site, whatsappUrl } from '@/content/site'
 import { about } from '@/content/about'
-import { MinisterVisit } from '@/components/sections/MinisterVisit'
+import { AdmissionsSection, DiwaliEvent, GovRecognition, MinisterVisitEvent, SchoolContact, SchoolServices } from '@/components/sections/School'
 import { galleryImages, pagePhotos } from '@/content/gallery'
 
 /* ============================================================ Founder */
@@ -87,8 +87,8 @@ export function KcrSpecialSchoolPage() {
   return (
     <>
       <Seo
-        title="Special School in Chennai | KCR Special School Admissions"
-        description="KCR Special School provides individualized special education for pre-primary and primary learners, registered with the Commissionerate for the Welfare of Differently Abled, Government of Tamil Nadu."
+        title="KCR Special School Chennai | Admissions 2026–27 | Govt Recognised, Royapettah"
+        description="KCR Special School, Royapettah, Chennai — recognised by the Government of Tamil Nadu (Reg. No. 954/2026). Special education, IEP, early intervention, school readiness and life skills. Admissions open 2026–27."
         path="/kcr-special-school"
       />
       <PageHero
@@ -98,8 +98,9 @@ export function KcrSpecialSchoolPage() {
         trail={[{ label: 'KCR Special School' }]}
       >
         <div className="mt-6 flex flex-wrap gap-3">
-          <Button to="/contact">Enquire about admission</Button>
+          <Button href={site.admissionFormUrl || '/contact'} variant="accent">Apply for Admission</Button>
           <Button href={whatsappUrl} variant="secondary">WhatsApp us</Button>
+          <Button href={site.phoneHref} variant="secondary">Call us</Button>
         </div>
       </PageHero>
 
@@ -121,13 +122,23 @@ export function KcrSpecialSchoolPage() {
             </p>
           </div>
           <aside className="flex flex-col gap-6">
-            <SidePhoto {...pagePhotos(110, 1)[0]} />
+            <SidePhoto src="/gallery-photos/moment-006.jpg" alt="A special educator guiding a child through a learning activity at KCR Special School" />
             <CallCard />
           </aside>
         </div>
       </Section>
 
-      <MinisterVisit />
+      <GovRecognition />
+      <AdmissionsSection />
+      <SchoolServices />
+      <Section tone="white" id="events">
+        <SectionHead eyebrow="Events & special moments" title="Life at KCR Special School" />
+        <div className="flex flex-col gap-14">
+          <MinisterVisitEvent />
+          <DiwaliEvent />
+        </div>
+      </Section>
+      <SchoolContact />
       <CTABand title="Enquire about KCR Special School admission" body="Pre-primary and primary seats for 2026–27 are open. Call or WhatsApp to arrange a visit and assessment." />
     </>
   )

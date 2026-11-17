@@ -4,7 +4,7 @@
  * Impact & Reviews, Donate, CSR, Compliance, Media, and the Founder profile.
  * Grouped in one file to keep the new-route surface easy to review together.
  */
-import { Button, Card, DraftNote, Section, SectionHead } from '@/components/ui'
+import { Button, Card, Section, SectionHead } from '@/components/ui'
 import { CTABand, CallCard, CheckList, PageHero, PhotoStrip, SidePhoto } from '@/components/sections'
 import { Seo } from '@/components/layout/Seo'
 import { RevealGroup, RevealItem } from '@/components/motion/Reveal'
@@ -199,18 +199,6 @@ export function CdecPage() {
         <PhotoStrip photos={pagePhotos(120, 3)} />
       </Section>
 
-      <Section tone="white">
-        <SectionHead
-          eyebrow="Graduation & current students"
-          title="Building capable professionals"
-          intro="Convocation photographs, certificates, student achievements and current batch photographs will be added here once supplied — including the exact course name and academic year for the present cohort."
-        />
-        <DraftNote>
-          Course approvals, awarding-body details, eligibility and schedules should be published
-          only after documentary verification, per the client's own note.
-        </DraftNote>
-      </Section>
-
       <Section tone="paper">
         <div className="rounded-card border border-ink-200 bg-white p-8">
           <h2 className="text-2xl">CDEC contact</h2>
@@ -292,10 +280,6 @@ export function AssessmentPage() {
               </li>
             ))}
           </ul>
-          <p className="mt-5 text-sm text-ink-500">
-            This will be published as "Coming Soon" until testing, consent controls, staff
-            training, access permissions and data-protection procedures are complete.
-          </p>
         </div>
       </Section>
 
@@ -343,11 +327,11 @@ export function SuccessStoriesPage() {
       />
 
       <Section tone="paper">
-        <DraftNote>
+        <p className="mb-6 max-w-[72ch] text-sm text-ink-500">
           No child's name, school, location, photograph or identifying clinical history is
-          published here without specific written parental consent. Individual outcomes vary
+          published without specific written parental consent. Individual outcomes vary
           according to each child's needs, attendance, family participation and programme.
-        </DraftNote>
+        </p>
 
         <RevealGroup className="grid gap-5 sm:grid-cols-2" stagger={0.08}>
           {stories.map((s) => (
@@ -401,13 +385,6 @@ export function ImpactReviewsPage() {
 
       <Section tone="white">
         <SectionHead eyebrow="Google Reviews" title="What families tell Google" />
-        <DraftNote>
-          The client's fuller requirement is a live-updating widget showing the current star
-          rating, total review count and 3–6 recent verified excerpts pulled automatically from
-          Google — that needs a Google Places/Reviews API integration, which is a separate
-          backend piece not yet built. The links below go straight to the centre's real Google
-          Business Profile in the meantime.
-        </DraftNote>
         <div className="flex flex-col items-center gap-4 rounded-card border border-ink-200 bg-paper p-10 text-center">
           <p className="font-display text-4xl font-bold text-accent-500">★★★★★</p>
           <p className="text-ink-500">See what families are saying on our Google Business Profile.</p>
@@ -466,11 +443,16 @@ export function DonatePage() {
           </div>
           <aside className="flex flex-col gap-6">
             <SidePhoto {...pagePhotos(140, 1)[0]} />
-            <DraftNote>
-              Bank / payment details for donations were not supplied in the source content and
-              must be added — and verified — by the client before this page can accept direct
-              donations. Contact the centre directly in the meantime.
-            </DraftNote>
+            <div className="rounded-card border border-accent-200 bg-accent-50 p-6">
+              <h3 className="mb-2 text-lg">How to donate</h3>
+              <p className="text-[0.95rem] text-ink-600">
+                For bank transfer details and your 80G receipt, call or email us and our team will
+                guide you through the donation.
+              </p>
+              <a href={`mailto:${site.email}?subject=Donation%20enquiry`} className="mt-3 inline-block break-all font-display text-sm font-semibold text-brand-600 underline">
+                {site.email}
+              </a>
+            </div>
             <CallCard />
           </aside>
         </div>
@@ -583,12 +565,6 @@ export function CompliancePage() {
             <p className="text-sm text-ink-500">Kids Rehab Charitable Trust</p>
           </Card>
         </div>
-        <DraftNote>
-          Per the client's own source document: 12A and 80G are provisional and must be
-          re-verified for current validity before publication, and the Trust registration number
-          must be checked against the Trust deed. Downloadable approval certificates should be
-          added here once supplied.
-        </DraftNote>
       </Section>
 
       <CTABand title="Questions about our registration?" body="Contact us directly and we'll share verified documentation." />
@@ -643,11 +619,6 @@ export function MediaPage() {
             <span key={c} className="rounded-full border border-ink-200 bg-white px-4 py-2 text-sm text-ink-700">{c}</span>
           ))}
         </div>
-        <DraftNote>
-          Actual TV screenshots, newspaper clippings and interview photographs — with
-          publication/channel name, date and headline for each — should be added once supplied by
-          the client.
-        </DraftNote>
       </Section>
 
       <CTABand />

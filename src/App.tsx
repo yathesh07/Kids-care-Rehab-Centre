@@ -1,5 +1,5 @@
 import { Suspense, lazy } from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { MobileActionBar, WhatsAppFab } from '@/components/layout/MobileActionBar'
@@ -25,7 +25,6 @@ const BranchDetailPage = named(() => import('@/pages/Locations'), 'BranchDetailP
 const AdultPhysioPage = named(() => import('@/pages/Misc'), 'AdultPhysioPage')
 const BooksPage = named(() => import('@/pages/Misc'), 'BooksPage')
 const GalleryPage = named(() => import('@/pages/Misc'), 'GalleryPage')
-const TestimonialsPage = named(() => import('@/pages/Misc'), 'TestimonialsPage')
 const TrustPage = named(() => import('@/pages/Misc'), 'TrustPage')
 const FaqPage = named(() => import('@/pages/Misc'), 'FaqPage')
 const PrivacyPage = named(() => import('@/pages/Misc'), 'PrivacyPage')
@@ -93,7 +92,7 @@ export default function App() {
             <Route path="/media" element={<MediaPage />} />
             <Route path="/books" element={<BooksPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
-            <Route path="/testimonials" element={<TestimonialsPage />} />
+            <Route path="/testimonials" element={<Navigate to="/impact-reviews" replace />} />
             <Route path="/trust" element={<TrustPage />} />
             <Route path="/faq" element={<FaqPage />} />
             <Route path="/contact" element={<Contact />} />

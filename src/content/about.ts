@@ -117,12 +117,6 @@ export const journey: { year: string; milestone: string; draft?: boolean }[] = [
     milestone: 'Kids Care Rehab Centre begins its therapy and training journey in Chennai.',
   },
   {
-    year: '2021–2022',
-    milestone:
-      'Continued therapy, parent support, awareness and training activities. [Awaiting verified centre records and photos from this period.]',
-    draft: true,
-  },
-  {
     year: '2023',
     milestone:
       'Autism awareness outreach with Chettinad School of Physiotherapy; Dr. Radha Balachandar addressed early identification and intervention for ADHD and learning disabilities, including a programme for 100+ government school teachers.',
@@ -131,12 +125,6 @@ export const journey: { year: string; milestone: string; draft?: boolean }[] = [
     year: '2024',
     milestone:
       'Free medical screening camp in Royapettah screened 100+ children for autism, ADHD, developmental delays and learning disabilities, with a parent interaction session.',
-  },
-  {
-    year: '2025',
-    milestone:
-      "The centre's verified annual activities, workshops, parent programmes and outreach for this year are being compiled from internal records and the approved Instagram archive.",
-    draft: true,
   },
   {
     year: '2026',

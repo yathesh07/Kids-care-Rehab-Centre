@@ -1,11 +1,11 @@
-import { Button, Card, cn, DraftNote, Section, SectionHead } from '@/components/ui'
+import { Button, Card, cn, Section, SectionHead } from '@/components/ui'
 import { CTABand, CallCard, CheckList, PageHero, PhotoStrip, SidePhoto } from '@/components/sections'
 import { Seo } from '@/components/layout/Seo'
 import { RevealGroup, RevealItem } from '@/components/motion/Reveal'
 import { IconArrow } from '@/components/ui/Icons'
 import { adultPhysio, books } from '@/content/about'
 import { IconCheck } from '@/components/ui/Icons'
-import { faqs, testimonials } from '@/content/placeholders'
+import { faqs } from '@/content/placeholders'
 import { galleryCategoryLabels, galleryImages, pagePhotos, type GalleryCategory } from '@/content/gallery'
 import { useMemo, useState } from 'react'
 import { site } from '@/content/site'
@@ -185,10 +185,6 @@ export function FaqPage() {
       <Section tone="paper">
         <div className="grid gap-10 lg:grid-cols-[1.6fr_0.9fr] lg:gap-14">
           <div>
-            <DraftNote>
-              These answers are drafted from approved service copy and are awaiting client review.
-              Two answers still need information from the centre (languages, fees).
-            </DraftNote>
 
             <div className="flex flex-col gap-3">
               {faqs.map((f) => (
@@ -222,43 +218,6 @@ export function FaqPage() {
 }
 
 /* ------------------------------------------------- Testimonials */
-export function TestimonialsPage() {
-  return (
-    <>
-      <Seo
-        title="Testimonials"
-        description="What families say about therapy at Kids Care Rehab Centre, Chennai."
-        path="/testimonials"
-        noindex
-      />
-      <PageHero
-        eyebrow="Testimonials"
-        title="What families tell us"
-        trail={[{ label: 'Testimonials' }]}
-      />
-      <Section tone="paper">
-        <DraftNote>
-          <strong>This page is not ready to publish.</strong> The cards below are dummy
-          placeholders. Real testimonials are needed from the client, each with written
-          permission from the family. The page is set to <code>noindex</code> until then.
-        </DraftNote>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {testimonials.map((t, i) => (
-            <Card key={i} interactive={false} className="border-dashed">
-              <p className="flex-1 text-[0.95rem] text-ink-500 italic">“{t.quote}”</p>
-              <div className="mt-4 border-t border-ink-200 pt-4">
-                <p className="font-display font-semibold text-ink-700">{t.author}</p>
-                <p className="text-sm text-ink-500">{t.detail}</p>
-              </div>
-            </Card>
-          ))}
-        </div>
-      </Section>
-      <CTABand />
-    </>
-  )
-}
-
 /* ----------------------------------------------------- Gallery */
 export function GalleryPage() {
   const [active, setActive] = useState<GalleryCategory | 'all'>('all')
@@ -301,16 +260,6 @@ export function GalleryPage() {
       </Section>
 
       <Section tone="paper">
-        <DraftNote>
-          Photos are currently grouped under the categories they were tagged with at upload.
-          Re-sorting the full set into every category listed (Latest Equipment, Special School,
-          CDEC Graduation, Awards &amp; Recognition, etc.) needs the client's approved Instagram
-          archive (instagram.com/kidscare_rehab) so each photo is placed correctly — see{' '}
-          <a href="https://www.instagram.com/kidscare_rehab/" target="_blank" rel="noopener noreferrer" className="underline">
-            @kidscare_rehab
-          </a>
-          .
-        </DraftNote>
 
         {galleryImages.length === 0 ? (
           <div className="mx-auto max-w-2xl rounded-card border border-dashed border-accent-400 bg-accent-50 p-8 text-center">
@@ -473,10 +422,6 @@ export function PrivacyPage() {
       />
       <PageHero eyebrow="Legal" title="Privacy Policy" trail={[{ label: 'Privacy' }]} />
       <Section tone="paper">
-        <DraftNote>
-          Draft policy. This must be reviewed by the client — and ideally by a legal adviser —
-          before launch, particularly the sections on children’s data and photograph consent.
-        </DraftNote>
 
         <div className="prose-page max-w-[68ch]">
           <h2>What we collect</h2>

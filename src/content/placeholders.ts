@@ -46,16 +46,6 @@ export const faqs: { q: string; a: string; draft: boolean }[] = [
     a: 'Yes. Our Adult Physio Care service at Royapettah offers physiotherapy assessment and treatment for conditions including knee and shoulder pain, osteoarthritis, back and neck pain, stroke rehabilitation and post-fracture stiffness, along with prenatal and postnatal exercise programs.',
     draft: true,
   },
-  {
-    q: 'Which languages do you work in?',
-    a: 'PLACEHOLDER — client to confirm. Our team works in Tamil and English.',
-    draft: true,
-  },
-  {
-    q: 'What are your fees?',
-    a: 'PLACEHOLDER — client to supply fee structure, or confirm that fees should be discussed only on enquiry.',
-    draft: true,
-  },
 ]
 
 /**

@@ -1,9 +1,9 @@
 /**
- * KCR Special School sections — built from the client's "Website Corrections" brief (Nov 2026).
+ * KCR Special School sections: recognition, admissions, events, about, services, contact.
  * Used on Home and /kcr-special-school.
  */
 import { Link } from 'react-router-dom'
-import { Button, Card, DraftNote, Section, SectionHead } from '@/components/ui'
+import { Button, Card, Section, SectionHead } from '@/components/ui'
 import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal'
 import { IconArrow, IconCheck, IconClock, IconMail, IconPhone, IconPin } from '@/components/ui/Icons'
 import { site, whatsappUrl } from '@/content/site'
@@ -195,14 +195,12 @@ function EventBlock({
   date,
   caption,
   photos,
-  note,
 }: {
   tag: string
   title: string
   date?: string
   caption: string
   photos: Photo[]
-  note?: string
 }) {
   return (
     <div className="flex flex-col gap-5">
@@ -215,7 +213,6 @@ function EventBlock({
         <p className="mt-2 text-ink-600">{caption}</p>
       </div>
       <EventGrid photos={photos} />
-      {note && <DraftNote>{note}</DraftNote>}
     </div>
   )
 }
@@ -225,7 +222,6 @@ export function MinisterVisitEvent() {
     <EventBlock
       tag="Special visit"
       title="Visit of Hon’ble Dr. N. Marie Wilson, Minister for Finance, Planning and Development, Government of Tamil Nadu"
-      date={site.events.ministerVisitDate || undefined}
       caption="KCR Special School and Kids Care Rehab Centre were honoured to welcome the Hon’ble Minister, who interacted with our students, therapists and special educators, and reviewed the school’s individualised education and therapy programmes."
       photos={ministerPhotos}
     />

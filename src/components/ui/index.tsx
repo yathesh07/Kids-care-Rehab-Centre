@@ -221,22 +221,6 @@ export function Chip({
   )
 }
 
-/* ---------------------------------------------------------- DraftNote */
-/** Visible marker so placeholder content can never ship unnoticed. */
-export function DraftNote({ children }: { children: ReactNode }) {
-  return (
-    <div
-      role="note"
-      className="mb-8 flex gap-3 rounded-card border border-dashed border-accent-400 bg-accent-50 p-4 text-sm text-accent-700"
-    >
-      <span aria-hidden="true" className="text-base leading-none">
-        ⚠
-      </span>
-      <p className="m-0">{children}</p>
-    </div>
-  )
-}
-
 /* ------------------------------------------------------------ Prose */
 export function Prose({ children, className }: { children: ReactNode; className?: string }) {
   return <div className={cn('prose-page', className)}>{children}</div>

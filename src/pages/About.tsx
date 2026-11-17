@@ -130,11 +130,6 @@ export default function About() {
               <span className="w-24 shrink-0 font-display text-lg font-bold text-brand-600">{j.year}</span>
               <p className="text-[0.95rem] text-ink-600">
                 {j.milestone}
-                {j.draft && (
-                  <span className="ml-2 rounded-full bg-accent-100 px-2 py-0.5 text-xs font-semibold text-accent-700">
-                    needs client verification
-                  </span>
-                )}
               </p>
             </li>
           ))}

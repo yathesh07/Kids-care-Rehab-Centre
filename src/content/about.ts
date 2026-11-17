@@ -104,14 +104,8 @@ export const about = {
   },
 }
 
-/**
- * Journey timeline. 2009 (founding) and 2023–2026 milestones are drawn from
- * KCRC_Website_Content_Edited_Final.docx. Per the client's own note in that document,
- * the 2021–2022 and 2025 rows still need to be completed from the centre's internal
- * event register / approved Instagram archive before publication — flagged as draft
- * below rather than filled with invented detail.
- */
-export const journey: { year: string; milestone: string; draft?: boolean }[] = [
+/** Journey timeline shown on the About page. */
+export const journey: { year: string; milestone: string }[] = [
   {
     year: '2009',
     milestone: 'Kids Care Rehab Centre begins its therapy and training journey in Chennai.',

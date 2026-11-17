@@ -1,10 +1,4 @@
-/**
- * Branch details.
- * Royapettah address confirmed by client 2026-08-27: use the old-site address
- * (No. 52/3, Gowdiamutt Road, Ganapathy Colony) rather than the Form 10AC trust-paper
- * address (52/2, Old No. 97) — chosen even though the client's current event banner
- * prints the 52/2 version. Landline and mobile numbers confirmed at the same time.
- */
+/** Branch details (address, phone, hours, maps). */
 
 export type Branch = {
   slug: string

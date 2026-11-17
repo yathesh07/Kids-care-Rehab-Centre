@@ -1,7 +1,6 @@
 /**
  * Global site facts.
  * Sources: TRUST DETAILS WORD.docx, ABOUT US.docx, and kidscarerehabcenter.in (Nov 2026).
- * Values marked NEEDS-CONFIRMATION are inconsistent across sources — see README.
  */
 
 export const site = {
@@ -76,22 +75,17 @@ export const site = {
 
   /** School registration — client-supplied 2026-09-10. */
   specialSchoolRegistrationBody: 'Commissionerate for the Welfare of Differently Abled, Government of Tamil Nadu',
-  // Google Form for KCR Special School admissions — set the client's form URL here
+  /** Google Form for KCR Special School admissions. */
   admissionFormUrl:
     'https://docs.google.com/forms/d/e/1FAIpQLSeKvDYfIOtcZDJyQ8f8SYMdKwzU0fTAUbg5Th4VhkXFKPHtLw/viewform?usp=header',
   specialSchoolRegistrationName: 'Kids Care Rehab - Special School',
   specialSchoolRegistrationNumber: '954/2026',
   specialSchoolRegistrationDate: '05.08.2026',
-  /** Path to the recognition certificate image/PDF in /public once the client supplies it. */
-  recognitionCertificate: '/documents/kcr-registration-certificate.pdf' as string,
+  /** Recognition certificate (PDF + preview image) in /public/documents. */
+  recognitionCertificate: '/documents/kcr-registration-certificate.pdf',
   recognitionCertificateImage: '/documents/kcr-registration-certificate.jpg',
   specialSchoolRegistrationValidTill: '05.01.2029',
 
-  /** Event details for the Events & Special Moments gallery. */
-  events: {
-    /** Date of the Finance Minister's visit — awaiting client confirmation. */
-    ministerVisitDate: '' as string,
-  },
 
   /** Google Business Profile review link — client-supplied 2026-09-10. */
   googleReviewUrl: 'https://g.page/r/CWtXZXWsxUL0EBM/review',

@@ -5,7 +5,7 @@ import { RevealGroup, RevealItem } from '@/components/motion/Reveal'
 import { IconArrow } from '@/components/ui/Icons'
 import { adultPhysio, books } from '@/content/about'
 import { IconCheck } from '@/components/ui/Icons'
-import { faqs } from '@/content/placeholders'
+import { faqs } from '@/content/faqs'
 import { galleryCategoryLabels, galleryImages, pagePhotos, type GalleryCategory } from '@/content/gallery'
 import { useMemo, useState } from 'react'
 import { site } from '@/content/site'
@@ -261,18 +261,7 @@ export function GalleryPage() {
 
       <Section tone="paper">
 
-        {galleryImages.length === 0 ? (
-          <div className="mx-auto max-w-2xl rounded-card border border-dashed border-accent-400 bg-accent-50 p-8 text-center">
-            <h2 className="text-xl text-accent-700">Gallery pending consent clearance</h2>
-            <p className="mt-3 text-[0.95rem] text-ink-600">
-              No images will be added here until the client confirms written consent per
-              photograph, or approves a facility-and-events-only selection.
-            </p>
-            <Button to="/contact" variant="secondary" className="mt-6">
-              Contact us
-            </Button>
-          </div>
-        ) : (
+        {galleryImages.length > 0 && (
           <>
             <div className="mb-8 flex flex-wrap gap-2">
               <button

@@ -55,11 +55,13 @@ Common updates:
 - **New photos** — add the file to `public/gallery-photos/` (max ~1400px wide), then list it in `gallery.ts`
 - **Events (Minister visit, Diwali)** — `src/components/sections/School.tsx`
 
-## Deployment (Netlify)
+## Deployment
+
+Works on any static host (Netlify, Vercel, Cloudflare Pages, etc.). On hosts other than Netlify, add an SPA fallback so all routes serve `index.html`. Netlify settings:
 
 - Build command: `npm run build`
 - Publish directory: `dist`
-- The contact enquiry form uses **Netlify Forms** (`public/forms.html` lets Netlify detect it). After the first deploy, send a test enquiry and confirm it arrives under *Forms* in the Netlify dashboard.
+- **Enquiry form** (`/contact`): on submit it opens WhatsApp to the centre's number (`whatsapp` in `site.ts`) with the enquiry filled in, so it works on any host. On Netlify it is also recorded under *Forms* in the dashboard (`public/forms.html` lets Netlify detect the form).
 - `public/_redirects` maps the old site's URLs to the new pages and includes the SPA fallback (must stay last).
 
 ## SEO

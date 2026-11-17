@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, type FormEvent } from 'react'
 import { Button, Section, cn } from '@/components/ui'
 import { PageHero } from '@/components/sections'
 import { Seo } from '@/components/layout/Seo'
@@ -11,8 +11,46 @@ const field =
   'w-full rounded-lg border border-ink-200 bg-white px-4 py-3 text-[0.95rem] text-ink-800 transition-colors placeholder:text-ink-400 focus:border-brand-400 focus:outline-2 focus:outline-offset-0 focus:outline-brand-200'
 const label = 'mb-1.5 block font-display text-sm font-semibold text-ink-800'
 
+/** Turns the enquiry into a WhatsApp message to the centre. Works on any host. */
+function enquiryToWhatsApp(data: FormData) {
+  const get = (k: string) => String(data.get(k) ?? '').trim()
+  const lines = [
+    'New enquiry from the website',
+    `Name: ${get('parentName')}`,
+    `Phone: ${get('phone')}`,
+    get('email') && `Email: ${get('email')}`,
+    get('childAge') && `Child's age: ${get('childAge')}`,
+    get('concern') && `Help with: ${get('concern')}`,
+    get('branch') && `Preferred centre: ${get('branch')}`,
+    get('message') && `Message: ${get('message')}`,
+  ].filter(Boolean)
+  return `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(lines.join('\n'))}`
+}
+
 export default function Contact() {
   const [sent, setSent] = useState(false)
+  const [waUrl, setWaUrl] = useState('')
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const data = new FormData(e.currentTarget)
+    if (String(data.get('company') ?? '')) return // honeypot: bot
+
+    // Netlify Forms record (only when hosted on Netlify; harmless elsewhere).
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(data as unknown as Record<string, string>).toString(),
+    }).catch(() => {})
+
+    // Deliver the enquiry straight to the centre on WhatsApp.
+    const url = enquiryToWhatsApp(data)
+    const win = window.open(url, '_blank')
+    if (win) win.opener = null
+    else window.location.href = url
+    setWaUrl(url)
+    setSent(true)
+  }
 
   return (
     <>
@@ -50,11 +88,16 @@ export default function Contact() {
                 <span className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-brand-500 text-white">
                   <IconCheck className="h-6 w-6" />
                 </span>
-                <h2 className="text-2xl">Thank you — we’ve got your enquiry</h2>
-                <p className="mx-auto mt-3 max-w-[46ch] text-ink-600">
-                  Our team will contact you within one working day. If it’s urgent, please call us
-                  on {site.phoneDisplay}.
+                <h2 className="text-2xl">Almost done — tap Send in WhatsApp</h2>
+                <p className="mx-auto mt-3 max-w-[48ch] text-ink-600">
+                  WhatsApp has opened with your enquiry filled in. Tap <strong>Send</strong> and our
+                  team will contact you within one working day. If it’s urgent, please call us on{' '}
+                  {site.phoneDisplay}.
                 </p>
+                <Button href={waUrl || whatsappUrl} className="mt-6">
+                  <IconWhatsApp className="h-4 w-4" />
+                  Open WhatsApp again
+                </Button>
                 <Button
                   onClick={() => setSent(false)}
                   variant="secondary"
@@ -69,13 +112,7 @@ export default function Contact() {
                 method="POST"
                 data-netlify="true"
                 netlify-honeypot="company"
-                onSubmit={(e) => {
-                  // Netlify handles the POST in production. Locally, show the success state.
-                  if (import.meta.env.DEV) {
-                    e.preventDefault()
-                    setSent(true)
-                  }
-                }}
+                onSubmit={handleSubmit}
                 className="rounded-card border border-ink-200 bg-white p-6 sm:p-8"
               >
                 <input type="hidden" name="form-name" value="enquiry" />
@@ -202,9 +239,15 @@ export default function Contact() {
                     </p>
                   </div>
 
-                  <Button type="submit" className="w-full sm:w-fit">
-                    Send enquiry
-                  </Button>
+                  <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
+                    <Button type="submit" className="w-full sm:w-fit">
+                      <IconWhatsApp className="h-4 w-4" />
+                      Send enquiry
+                    </Button>
+                    <p className="text-xs text-ink-500">
+                      Your enquiry opens in WhatsApp, ready to send to our team.
+                    </p>
+                  </div>
                 </div>
               </form>
             )}
